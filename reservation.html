@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Encodage UTF-8 (accents, caractères spéciaux) -->
+    <meta charset="utf-8" />
+
+    <!-- Responsive : adapte l’affichage à tous les écrans -->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Titre affiché dans l’onglet du navigateur -->
+    <title>Réservation — Nettoie Presto</title>
+
+    <!-- Police Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feuille de style principale -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- =========================
+       HEADER / NAVIGATION
+  ========================== -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <!-- Logo cliquable qui renvoie à l’accueil -->
+        <a class="logo" href="index.html">
+          <img src="assets/logo_styleA_transparent.png" alt="logo" />
+        </a>
+
+        <!-- Menu de navigation principal -->
+        <nav class="main-nav">
+          <a href="index.html">Accueil</a>
+          <a href="services.html">Services</a>
+          <a href="premium.html">Premium</a>
+
+          <!-- Bouton principal pour la page active -->
+          <a href="reservation.html" class="btn-primary">Réserver</a>
+
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- =========================
+       CONTENU PRINCIPAL
+  ========================== -->
+    <main class="container">
+      <!-- En-tête de la page -->
+      <section class="page-header">
+        <h1>Réservation en ligne</h1>
+        <p>Choisissez un créneau dès demain.</p>
+      </section>
+
+      <!-- =========================
+         FORMULAIRE DE RÉSERVATION
+         Utilise FormSubmit pour envoyer par email
+    ========================== -->
+
+      <form
+        id="bookingForm"
+        class="form-card"
+        method="POST"
+        action="https://formsubmit.co/nettoiepresto@gmail.com"
+      >
+        <!-- Sujet de l’email reçu -->
+        <input
+          type="hidden"
+          name="_subject"
+          value="Nouvelle réservation — Nettoie Presto"
+        />
+
+        <!-- Redirection après envoi réussi -->
+        <!-- Le paramètre ?thankyou=1 est utilisé par le JS -->
+        <input
+          type="hidden"
+          name="_next"
+          value="/reservation.html?thankyou=1"
+        />
+
+        <!-- Permet de répondre directement au client -->
+        <input type="hidden" name="_replyto" value="%email%" />
+
+        <!-- Réponse automatique envoyée au client -->
+        <input
+          type="hidden"
+          name="_autoresponse"
+          value="Bonjour,
+
+        Nous avons bien reçu votre demande de réservation chez Nettoie Presto.
+
+        Notre équipe vous contactera dans les plus brefs délais afin de confirmer les détails et le rendez-vous.
+
+        Merci pour votre confiance.
+
+        Nettoie Presto
+        L’éclat en lui-même"
+        />
+
+        <!-- =========================
+           CHAMPS UTILISATEUR
+      ========================== -->
+
+        <label>
+          Nom complet <span class="required">*</span>
+          <input type="text" name="Nom" required />
+        </label>
+
+        <label>
+          Email <span class="required">*</span>
+          <input type="email" name="email" required />
+        </label>
+
+        <label>
+          Téléphone <span class="required">*</span>
+          <input type="tel" name="Téléphone" required />
+        </label>
+
+        <!-- Choix du service -->
+        <label>
+          Type de service <span class="required">*</span>
+          <select name="Service" required>
+            <option value="">-- Choisissez --</option>
+            <option>Nettoyage des vitres</option>
+            <option>Nettoyage des canapés</option>
+            <option>Nettoyage des matelas</option>
+            <option>Solutions Grand Nettoyage</option>
+            <option>Service Premium</option>
+          </select>
+        </label>
+
+        <!-- Date de réservation -->
+        <!-- Le JS empêche les dates passées et le jour même -->
+        <label>
+          Date souhaitée <span class="required">*</span>
+          <input id="bookingDate" type="date" name="Date" required />
+          <small>La réservation doit être pour demain ou après.</small>
+        </label>
+
+        <!-- Créneau horaire -->
+        <label>
+          Créneau horaire <span class="required">*</span>
+          <select name="Créneau" required>
+            <option value="">-- Choisissez --</option>
+            <option>08:00 - 10:00</option>
+            <option>10:00 - 12:00</option>
+            <option>12:00 - 14:00</option>
+            <option>14:00 - 16:00</option>
+            <option>16:00 - 18:00</option>
+          </select>
+        </label>
+
+        <!-- Message libre -->
+        <label>
+          Message (options, adresse, remarques)
+          <textarea name="Message" rows="4"></textarea>
+        </label>
+
+        <!-- Boutons d’action -->
+        <div class="form-actions">
+          <button type="submit" class="btn-primary large">
+            Envoyer la réservation
+          </button>
+
+          <a href="contact.html" class="btn-ghost"> Besoin d'aide ? </a>
+        </div>
+      </form>
+
+      <!-- =========================
+         MESSAGE DE CONFIRMATION
+         Affiché après envoi réussi
+    ========================== -->
+      <div id="thankyou" class="center hidden">
+        <h3>Merci — réservation envoyée !</h3>
+        <p>Nous vous contacterons bientôt pour confirmer.</p>
+      </div>
+    </main>
+
+    <!-- =========================
+       FOOTER
+  ========================== -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>© Nettoie Presto — L'éclat en lui-même</p>
+      </div>
+    </footer>
+
+    <!-- Script JavaScript principal -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

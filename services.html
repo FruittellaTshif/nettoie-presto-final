@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Encodage + responsive -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Titre onglet navigateur -->
+    <title>Nos Services — Nettoie Presto</title>
+
+    <!-- Police -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- =========================
+         HEADER + NAV
+    ========================== -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <!-- Logo cliquable vers l'accueil -->
+        <a class="logo" href="index.html">
+          <img
+            src="assets/logo_styleA_transparent.png"
+            alt="logo Nettoie Presto"
+          />
+        </a>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+          <a href="index.html">Accueil</a>
+          <a href="services.html" class="active">Services</a>
+          <a href="premium.html">Premium</a>
+          <a href="reservation.html" class="btn-primary">Réserver</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- =========================
+         CONTENU PRINCIPAL
+    ========================== -->
+    <main class="container">
+      <!-- Titre + sous-titre -->
+      <section class="page-header">
+        <h1>Nos services</h1>
+        <p>Des services adaptés aux particuliers et aux entreprises.</p>
+      </section>
+
+      <!-- =========================
+           GRILLE DES SERVICES
+           IMPORTANT :
+           - Chaque <article> a un id (ancre)
+           - Ces ids permettent de naviguer directement depuis l'accueil :
+             ex: services.html#vitres
+      ========================== -->
+      <section class="services-grid">
+        <!-- 1) Vitres -->
+        <article class="service" id="vitres">
+          <h3>Nettoyage des vitres (intérieures & extérieures)</h3>
+          <p>
+            Maisons, condos ou appartements — grandes fenêtres et portes
+            vitrées. Nettoyage garanti sans traces.
+          </p>
+        </article>
+
+        <!-- 2) Canapés -->
+        <article class="service" id="canapes">
+          <h3>Nettoyage de canapés à domicile</h3>
+          <p>
+            Canapés 2 à 3 places, sectionnels et fauteuils. Produits écologiques
+            et sans danger. Élimination des taches et odeurs, séchage rapide.
+          </p>
+          <p><em>Option :</em> traitement antitaches pour protéger le tissu.</p>
+        </article>
+
+        <!-- 3) Tissus d’ameublement / Matelas -->
+        <article class="service" id="tissus">
+          <h3>Nettoyage de tissus d’ameublement</h3>
+          <p>
+            Fauteuils, chaises, matelas, etc. Élimination des mauvaises odeurs,
+            poussière et acariens.
+          </p>
+        </article>
+
+        <!-- 4) Désodorisation -->
+        <article class="service" id="desodorisation">
+          <h3>Désodorisation des surfaces</h3>
+          <p>
+            Neutralisation des odeurs d’animaux, d’humidité, etc. Produits
+            naturels et efficaces.
+          </p>
+        </article>
+
+        <!-- 5) Traitement antitaches (service dédié) -->
+        <article class="service" id="antitaches">
+          <h3>Traitement antitaches</h3>
+          <p>
+            Application d’un produit qui empêche les taches de pénétrer et
+            protège vos meubles pour longtemps.
+          </p>
+        </article>
+
+        <!-- 6) Informations générales (zone + inclusions) -->
+        <article class="service" id="zone-garanties">
+          <h3>Zone desservie & garanties</h3>
+          <p><strong>Zone :</strong> Montréal et environs.</p>
+          <p>
+            Tous les services incluent le matériel, le déplacement et une
+            garantie de satisfaction.
+          </p>
+          <p>Produits sûrs pour les enfants et les animaux.</p>
+          <p><strong>Devis gratuit :</strong> contactez-nous dès maintenant.</p>
+        </article>
+      </section>
+
+      <!-- CTA : renvoie vers la page réservation -->
+      <div class="center">
+        <a href="reservation.html" class="btn-primary large">
+          Réserver un service
+        </a>
+      </div>
+    </main>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>© Nettoie Presto — L'éclat en lui-même</p>
+      </div>
+    </footer>
+
+    <!-- JS (validation date réservation + thankyou) -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
