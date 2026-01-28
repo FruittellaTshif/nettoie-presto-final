@@ -551,7 +551,9 @@ label.invalid .error-message {
    ✅ SERVICES PAGE (nouveau style comme ton exemple)
 ===================================================== */
 .services-hero {
-  background-image: var(--services-hero-img);
+   background-image:
+    linear-gradient(rgba(11, 35, 64, 0.55), rgba(11, 35, 64, 0.55)),
+    url("../assets/service_page.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
