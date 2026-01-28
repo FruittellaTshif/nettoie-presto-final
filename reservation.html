@@ -21,12 +21,14 @@
   </head>
 
   <body>
-    <!-- ✅ HEADER chargé depuis partials/header.html -->
+    <!-- =====================================================
+         HEADER (injecté depuis partials/header.html)
+    ====================================================== -->
     <div id="header"></div>
 
-    <!-- =========================
-       CONTENU PRINCIPAL
-    ========================== -->
+    <!-- =====================================================
+         CONTENU PRINCIPAL
+    ====================================================== -->
     <main class="container">
       <!-- En-tête de page -->
       <section class="page-header">
@@ -34,11 +36,12 @@
         <p>Choisissez un créneau dès demain.</p>
       </section>
 
-      <!-- =========================
-         FORMULAIRE DE RÉSERVATION (FormSubmit)
-         ✅ Même champs, même names
-         ✅ Style "pro" : sections + grilles
-    ========================== -->
+      <!-- =====================================================
+           FORMULAIRE DE RÉSERVATION (FormSubmit)
+           - Envoi email vers: nettoiepresto@gmail.com
+           - Redirect après succès: reservation.html?thankyou=1
+           - Validation UX gérée dans js/main.js (submit uniquement)
+      ====================================================== -->
       <form
         id="bookingForm"
         class="form-card booking-form"
@@ -53,14 +56,21 @@
           value="Nouvelle réservation — Nettoie Presto"
         />
 
-        <!-- Redirection après succès -->
+        <!-- =====================================================
+             ✅ Redirection après succès
+             IMPORTANT (GitHub Pages) :
+             - Il faut une URL complète, sinon "/" ne fonctionne pas comme attendu
+        ====================================================== -->
         <input
           type="hidden"
           name="_next"
-          value="/reservation.html?thankyou=1"
+          value="https://fruittellatshif.github.io/nettoie-presto-final/reservation.html?thankyou=1"
         />
 
-        <!-- Réponse automatique client -->
+        <!-- (Optionnel) Désactive le captcha FormSubmit -->
+        <input type="hidden" name="_captcha" value="false" />
+
+        <!-- Réponse automatique au client (optionnel) -->
         <input
           type="hidden"
           name="_autoresponse"
@@ -76,7 +86,7 @@ Nettoie Presto
 La solution rapide pour un nettoyage parfait"
         />
 
-        <!-- Champ anti-bot -->
+        <!-- Champ anti-bot (honeypot) : doit rester vide -->
         <input
           type="text"
           name="_honey"
@@ -85,7 +95,7 @@ La solution rapide pour un nettoyage parfait"
           autocomplete="off"
         />
 
-        <!-- Reply-To (rempli via JS en récupérant l'email) -->
+        <!-- Reply-To (rempli via JS avec l’email client) -->
         <input type="hidden" name="_replyto" id="replyToField" value="" />
 
         <!-- =====================================================
@@ -99,9 +109,7 @@ La solution rapide pour un nettoyage parfait"
             <label>
               Nom complet <span class="required">*</span>
               <input type="text" name="Nom" required />
-              <div class="error-message">
-                Veuillez entrer votre nom complet.
-              </div>
+              <div class="error-message">Ce champ est obligatoire.</div>
             </label>
 
             <!-- Email -->
@@ -117,9 +125,7 @@ La solution rapide pour un nettoyage parfait"
             <label class="span-2">
               Téléphone <span class="required">*</span>
               <input type="tel" name="Téléphone" required />
-              <div class="error-message">
-                Veuillez entrer votre numéro de téléphone.
-              </div>
+              <div class="error-message">Ce champ est obligatoire.</div>
             </label>
           </div>
         </section>
@@ -142,7 +148,7 @@ La solution rapide pour un nettoyage parfait"
                 <option>Solutions Grand Nettoyage</option>
                 <option>Service Premium</option>
               </select>
-              <div class="error-message">Veuillez sélectionner un service.</div>
+              <div class="error-message">Veuillez choisir une option.</div>
             </label>
 
             <!-- Créneau -->
@@ -156,9 +162,7 @@ La solution rapide pour un nettoyage parfait"
                 <option>14:00 - 16:00</option>
                 <option>16:00 - 18:00</option>
               </select>
-              <div class="error-message">
-                Veuillez choisir un créneau horaire.
-              </div>
+              <div class="error-message">Veuillez choisir une option.</div>
             </label>
 
             <!-- Date -->
@@ -179,34 +183,42 @@ La solution rapide pour un nettoyage parfait"
           </div>
         </section>
 
-        <!-- Boutons -->
+        <!-- Actions -->
         <div class="form-actions">
           <button type="submit" class="btn-primary large">
             Envoyer la réservation
           </button>
-
           <a href="contact.html" class="btn-ghost">Besoin d'aide ?</a>
         </div>
       </form>
 
-      <!-- =========================
-         MESSAGE THANK YOU
-    ========================== -->
+      <!-- =====================================================
+           MESSAGE DE CONFIRMATION (affiché si ?thankyou=1)
+           Ton JS (js/main.js) cache le form et affiche ce bloc.
+      ====================================================== -->
       <div id="thankyou" class="center hidden">
-        <h3>Merci — réservation envoyée !</h3>
+        <h3>Merci — réservation envoyée ✅</h3>
         <p>Nous vous contacterons bientôt pour confirmer.</p>
+        <div style="margin-top: 14px">
+          <a class="btn-primary" href="index.html">Retour à l’accueil</a>
+        </div>
       </div>
     </main>
 
-    <!-- ✅ FOOTER chargé depuis partials/footer.html -->
+    <!-- =====================================================
+         FOOTER (injecté depuis partials/footer.html)
+    ====================================================== -->
     <div id="footer"></div>
 
     <!-- =====================================================
-         ICÔNES SOPHISTIQUÉES (Lucide)
+         LUCIDE (icônes)
     ====================================================== -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- ✅ Injection des partials + rechargement icônes -->
+    <!-- =====================================================
+         Injection des partials (header/footer)
+         + rechargement des icônes une fois injectés
+    ====================================================== -->
     <script>
       // Header
       fetch("partials/header.html")
@@ -225,7 +237,10 @@ La solution rapide pour un nettoyage parfait"
         });
     </script>
 
-    <!-- JS principal (menu mobile etc.) -->
+    <!-- =====================================================
+         JS principal (menu mobile, date min, validation, thankyou)
+    ====================================================== -->
     <script src="js/main.js"></script>
   </body>
 </html>
+
