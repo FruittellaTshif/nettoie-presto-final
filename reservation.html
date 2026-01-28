@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <!-- Encodage UTF-8 (accents, caractères spéciaux) -->
@@ -7,171 +7,190 @@
     <!-- Responsive : adapte l’affichage à tous les écrans -->
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    <!-- Titre affiché dans l’onglet du navigateur -->
+    <!-- Titre -->
     <title>Réservation — Nettoie Presto</title>
 
-    <!-- Police Google Fonts -->
+    <!-- Police -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Feuille de style principale -->
+    <!-- CSS principal -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
-    <!-- =========================
-       HEADER / NAVIGATION
-  ========================== -->
-    <header class="site-header">
-      <div class="container header-inner">
-        <!-- Logo cliquable qui renvoie à l’accueil -->
-        <a class="logo" href="index.html">
-          <img src="assets/logo_styleA_transparent.png" alt="logo" />
-        </a>
-
-        <!-- Menu de navigation principal -->
-        <nav class="main-nav">
-          <a href="index.html">Accueil</a>
-          <a href="services.html">Services</a>
-          <a href="premium.html">Premium</a>
-
-          <!-- Bouton principal pour la page active -->
-          <a href="reservation.html" class="btn-primary">Réserver</a>
-
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
-    </header>
+    <!-- ✅ HEADER chargé depuis partials/header.html -->
+    <div id="header"></div>
 
     <!-- =========================
        CONTENU PRINCIPAL
-  ========================== -->
+    ========================== -->
     <main class="container">
-      <!-- En-tête de la page -->
+      <!-- En-tête de page -->
       <section class="page-header">
         <h1>Réservation en ligne</h1>
         <p>Choisissez un créneau dès demain.</p>
       </section>
 
       <!-- =========================
-         FORMULAIRE DE RÉSERVATION
-         Utilise FormSubmit pour envoyer par email
+         FORMULAIRE DE RÉSERVATION (FormSubmit)
+         ✅ Même champs, même names
+         ✅ Style "pro" : sections + grilles
     ========================== -->
-
       <form
         id="bookingForm"
-        class="form-card"
+        class="form-card booking-form"
         method="POST"
         action="https://formsubmit.co/nettoiepresto@gmail.com"
+        novalidate
       >
-        <!-- Sujet de l’email reçu -->
+        <!-- Sujet email -->
         <input
           type="hidden"
           name="_subject"
           value="Nouvelle réservation — Nettoie Presto"
         />
 
-        <!-- Redirection après envoi réussi -->
-        <!-- Le paramètre ?thankyou=1 est utilisé par le JS -->
+        <!-- Redirection après succès -->
         <input
           type="hidden"
           name="_next"
           value="/reservation.html?thankyou=1"
         />
 
-        <!-- Permet de répondre directement au client -->
-        <input type="hidden" name="_replyto" value="%email%" />
-
-        <!-- Réponse automatique envoyée au client -->
+        <!-- Réponse automatique client -->
         <input
           type="hidden"
           name="_autoresponse"
           value="Bonjour,
 
-        Nous avons bien reçu votre demande de réservation chez Nettoie Presto.
+Nous avons bien reçu votre demande de réservation chez Nettoie Presto.
 
-        Notre équipe vous contactera dans les plus brefs délais afin de confirmer les détails et le rendez-vous.
+Notre équipe vous contactera dans les plus brefs délais afin de confirmer les détails et le rendez-vous.
 
-        Merci pour votre confiance.
+Merci pour votre confiance.
 
-        Nettoie Presto
-        L’éclat en lui-même"
+Nettoie Presto
+La solution rapide pour un nettoyage parfait"
         />
 
-        <!-- =========================
-           CHAMPS UTILISATEUR
-      ========================== -->
+        <!-- Champ anti-bot -->
+        <input
+          type="text"
+          name="_honey"
+          style="display: none"
+          tabindex="-1"
+          autocomplete="off"
+        />
 
-        <label>
-          Nom complet <span class="required">*</span>
-          <input type="text" name="Nom" required />
-        </label>
+        <!-- Reply-To (rempli via JS en récupérant l'email) -->
+        <input type="hidden" name="_replyto" id="replyToField" value="" />
 
-        <label>
-          Email <span class="required">*</span>
-          <input type="email" name="email" required />
-        </label>
+        <!-- =====================================================
+             SECTION 1 : INFORMATIONS PERSONNELLES
+        ====================================================== -->
+        <section class="form-section">
+          <div class="form-section-title">Informations personnelles</div>
 
-        <label>
-          Téléphone <span class="required">*</span>
-          <input type="tel" name="Téléphone" required />
-        </label>
+          <div class="form-grid">
+            <!-- Nom -->
+            <label>
+              Nom complet <span class="required">*</span>
+              <input type="text" name="Nom" required />
+              <div class="error-message">
+                Veuillez entrer votre nom complet.
+              </div>
+            </label>
 
-        <!-- Choix du service -->
-        <label>
-          Type de service <span class="required">*</span>
-          <select name="Service" required>
-            <option value="">-- Choisissez --</option>
-            <option>Nettoyage des vitres</option>
-            <option>Nettoyage des canapés</option>
-            <option>Nettoyage des matelas</option>
-            <option>Solutions Grand Nettoyage</option>
-            <option>Service Premium</option>
-          </select>
-        </label>
+            <!-- Email -->
+            <label>
+              Email <span class="required">*</span>
+              <input type="email" name="email" id="clientEmail" required />
+              <div class="error-message">
+                Veuillez entrer une adresse email valide.
+              </div>
+            </label>
 
-        <!-- Date de réservation -->
-        <!-- Le JS empêche les dates passées et le jour même -->
-        <label>
-          Date souhaitée <span class="required">*</span>
-          <input id="bookingDate" type="date" name="Date" required />
-          <small>La réservation doit être pour demain ou après.</small>
-        </label>
+            <!-- Téléphone -->
+            <label class="span-2">
+              Téléphone <span class="required">*</span>
+              <input type="tel" name="Téléphone" required />
+              <div class="error-message">
+                Veuillez entrer votre numéro de téléphone.
+              </div>
+            </label>
+          </div>
+        </section>
 
-        <!-- Créneau horaire -->
-        <label>
-          Créneau horaire <span class="required">*</span>
-          <select name="Créneau" required>
-            <option value="">-- Choisissez --</option>
-            <option>08:00 - 10:00</option>
-            <option>10:00 - 12:00</option>
-            <option>12:00 - 14:00</option>
-            <option>14:00 - 16:00</option>
-            <option>16:00 - 18:00</option>
-          </select>
-        </label>
+        <!-- =====================================================
+             SECTION 2 : DÉTAILS DU SERVICE
+        ====================================================== -->
+        <section class="form-section">
+          <div class="form-section-title">Détails du service</div>
 
-        <!-- Message libre -->
-        <label>
-          Message (options, adresse, remarques)
-          <textarea name="Message" rows="4"></textarea>
-        </label>
+          <div class="form-grid">
+            <!-- Service -->
+            <label>
+              Type de service <span class="required">*</span>
+              <select name="Service" required>
+                <option value="">-- Choisissez --</option>
+                <option>Nettoyage des vitres</option>
+                <option>Nettoyage des canapés</option>
+                <option>Nettoyage des matelas</option>
+                <option>Solutions Grand Nettoyage</option>
+                <option>Service Premium</option>
+              </select>
+              <div class="error-message">Veuillez sélectionner un service.</div>
+            </label>
 
-        <!-- Boutons d’action -->
+            <!-- Créneau -->
+            <label>
+              Créneau horaire <span class="required">*</span>
+              <select name="Créneau" required>
+                <option value="">-- Choisissez --</option>
+                <option>08:00 - 10:00</option>
+                <option>10:00 - 12:00</option>
+                <option>12:00 - 14:00</option>
+                <option>14:00 - 16:00</option>
+                <option>16:00 - 18:00</option>
+              </select>
+              <div class="error-message">
+                Veuillez choisir un créneau horaire.
+              </div>
+            </label>
+
+            <!-- Date -->
+            <label class="span-2">
+              Date souhaitée <span class="required">*</span>
+              <input id="bookingDate" type="date" name="Date" required />
+              <small>La réservation doit être pour demain ou après.</small>
+              <div class="error-message">
+                Veuillez choisir une date valide (à partir de demain).
+              </div>
+            </label>
+
+            <!-- Message (optionnel) -->
+            <label class="span-2">
+              Message (options, adresse, remarques)
+              <textarea name="Message" rows="4"></textarea>
+            </label>
+          </div>
+        </section>
+
+        <!-- Boutons -->
         <div class="form-actions">
           <button type="submit" class="btn-primary large">
             Envoyer la réservation
           </button>
 
-          <a href="contact.html" class="btn-ghost"> Besoin d'aide ? </a>
+          <a href="contact.html" class="btn-ghost">Besoin d'aide ?</a>
         </div>
       </form>
 
       <!-- =========================
-         MESSAGE DE CONFIRMATION
-         Affiché après envoi réussi
+         MESSAGE THANK YOU
     ========================== -->
       <div id="thankyou" class="center hidden">
         <h3>Merci — réservation envoyée !</h3>
@@ -179,16 +198,34 @@
       </div>
     </main>
 
-    <!-- =========================
-       FOOTER
-  ========================== -->
-    <footer class="site-footer">
-      <div class="container">
-        <p>© Nettoie Presto — L'éclat en lui-même</p>
-      </div>
-    </footer>
+    <!-- ✅ FOOTER chargé depuis partials/footer.html -->
+    <div id="footer"></div>
 
-    <!-- Script JavaScript principal -->
+    <!-- =====================================================
+         ICÔNES SOPHISTIQUÉES (Lucide)
+    ====================================================== -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- ✅ Injection des partials + rechargement icônes -->
+    <script>
+      // Header
+      fetch("partials/header.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("header").innerHTML = html;
+          if (window.lucide) lucide.createIcons();
+        });
+
+      // Footer
+      fetch("partials/footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer").innerHTML = html;
+          if (window.lucide) lucide.createIcons();
+        });
+    </script>
+
+    <!-- JS principal (menu mobile etc.) -->
     <script src="js/main.js"></script>
   </body>
 </html>

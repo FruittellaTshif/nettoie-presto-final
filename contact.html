@@ -1,53 +1,113 @@
 <!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact — Nettoie Presto</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html"><img src="assets/logo_styleA_transparent.png" alt="logo"></a>
-      <nav class="main-nav">
-        <a href="index.html">Accueil</a>
-        <a href="services.html">Services</a>
-        <a href="premium.html">Premium</a>
-        <a href="reservation.html" class="btn-primary">Réserver</a>
-        <a href="contact.html" class="active">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <head>
+    <!-- Encodage + responsive -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <main class="container">
-    <section class="page-header"><h1>Contact</h1><p>Contactez-nous par email ou téléphone.</p></section>
+    <!-- Titre -->
+    <title>Contact — Nettoie Presto</title>
 
-    <section class="contact-cards">
-      <div class="card">
-        <h3>Email</h3>
-        <p><a href="mailto:nettoiepresto@gmail.com">nettoiepresto@gmail.com</a></p>
+    <!-- Police -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ✅ HEADER chargé depuis partials/header.html -->
+    <div id="header"></div>
+
+    <!-- =========================
+       CONTENU PRINCIPAL
+    ========================== -->
+    <main class="container">
+      <!-- En-tête -->
+      <section class="contact-top">
+        <h1>Contactez-nous</h1>
+        <p>Une question ou une remarque ? Écrivez-nous un message.</p>
+      </section>
+
+      <!-- ✅ Bloc bas (2 lignes / 2 colonnes) -->
+      <section class="contact-panel">
+        <div class="contact-panel-grid">
+          <!-- Email -->
+          <div class="contact-panel-item">
+            <div class="contact-panel-icon">
+              <i data-lucide="mail"></i>
+            </div>
+            <h3>Email</h3>
+            <p>
+              <a href="mailto:nettoiepresto@gmail.com"
+                >nettoiepresto@gmail.com</a
+              >
+            </p>
+          </div>
+
+          <!-- Téléphone -->
+          <div class="contact-panel-item">
+            <div class="contact-panel-icon">
+              <i data-lucide="phone"></i>
+            </div>
+            <h3>Téléphone</h3>
+            <p>
+              <a href="tel:+15144485273">514-448-5273</a>
+            </p>
+            <p class="muted">Montréal et alentours.</p>
+          </div>
+
+          <!-- Zone -->
+          <div class="contact-panel-item">
+            <div class="contact-panel-icon">
+              <i data-lucide="map-pin"></i>
+            </div>
+            <h3>Zone desservie</h3>
+            <p>Service mobile.</p>
+            <p><strong>Montréal et environs immédiats.</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="center" style="margin-top: 18px">
+        <a href="reservation.html" class="btn-primary large"
+          >Réserver un service</a
+        >
       </div>
+    </main>
 
-      <div class="card">
-        <h3>Téléphone</h3>
-        <p><a href="tel:+15144485273">514-448-5273</a></p>
-      </div>
+    <!-- ✅ FOOTER chargé depuis partials/footer.html -->
+    <div id="footer"></div>
 
-      <div class="card">
-        <h3>Adresse</h3>
-        <p>Service mobile — interventions à domicile / sur site</p>
-      </div>
-    </section>
-  </main>
+    <!-- =====================================================
+         ICÔNES SOPHISTIQUÉES (Lucide)
+    ====================================================== -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© Nettoie Presto — L'éclat en lui-même</p>
-    </div>
-  </footer>
+    <!-- ✅ Injection des partials + rechargement icônes -->
+    <script>
+      // Header
+      fetch("partials/header.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("header").innerHTML = html;
+          if (window.lucide) lucide.createIcons();
+        });
 
-  <script src="js/main.js"></script>
-</body>
+      // Footer
+      fetch("partials/footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer").innerHTML = html;
+          if (window.lucide) lucide.createIcons();
+        });
+    </script>
+
+    <!-- JS principal (menu mobile etc.) -->
+    <script src="js/main.js"></script>
+  </body>
 </html>

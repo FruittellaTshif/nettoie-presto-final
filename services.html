@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <!-- Encodage + responsive -->
@@ -19,125 +19,213 @@
   </head>
 
   <body>
-    <!-- =========================
-         HEADER + NAV
-    ========================== -->
-    <header class="site-header">
-      <div class="container header-inner">
-        <!-- Logo cliquable vers l'accueil -->
-        <a class="logo" href="index.html">
-          <img
-            src="assets/logo_styleA_transparent.png"
-            alt="logo Nettoie Presto"
-          />
-        </a>
+    <!-- ✅ HEADER chargé depuis partials/header.html -->
+    <div id="header"></div>
 
-        <!-- Navigation -->
-        <nav class="main-nav">
-          <a href="index.html">Accueil</a>
-          <a href="services.html" class="active">Services</a>
-          <a href="premium.html">Premium</a>
-          <a href="reservation.html" class="btn-primary">Réserver</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
-    </header>
-
-    <!-- =========================
-         CONTENU PRINCIPAL
-    ========================== -->
-    <main class="container">
-      <!-- Titre + sous-titre -->
-      <section class="page-header">
-        <h1>Nos services</h1>
-        <p>Des services adaptés aux particuliers et aux entreprises.</p>
+    <main>
+      <!-- =====================================================
+           HERO SERVICES (comme ton exemple)
+           - Image: assets/service_page.jpg
+      ====================================================== -->
+      <section
+        class="services-hero"
+        style="--services-hero-img: url(&quot;/assets/service_page.jpg&quot;)"
+      >
+        <div class="services-hero-overlay">
+          <div class="container services-hero-inner">
+            <h1>Nos services</h1>
+            <p>Des services adaptés aux particuliers et aux entreprises.</p>
+          </div>
+        </div>
       </section>
 
-      <!-- =========================
-           GRILLE DES SERVICES
-           IMPORTANT :
-           - Chaque <article> a un id (ancre)
-           - Ces ids permettent de naviguer directement depuis l'accueil :
-             ex: services.html#vitres
-      ========================== -->
-      <section class="services-grid">
-        <!-- 1) Vitres -->
-        <article class="service" id="vitres">
-          <h3>Nettoyage des vitres (intérieures & extérieures)</h3>
-          <p>
-            Maisons, condos ou appartements — grandes fenêtres et portes
-            vitrées. Nettoyage garanti sans traces.
-          </p>
-        </article>
+      <!-- =====================================================
+           LISTE DES SERVICES (cartes style pro)
+           ✅ IMPORTANT : ids gardés (vitres, canapes, matelas...)
+           ✅ Permet le highlight via :target
+      ====================================================== -->
+      <section class="container services-page">
+        <div class="services-cards">
+          <!-- 1) Vitres -->
+          <article class="service-item" id="vitres">
+            <div class="service-badge">
+              <span class="service-badge-inner" aria-hidden="true">
+                <i data-lucide="window"></i>
+              </span>
+            </div>
 
-        <!-- 2) Canapés -->
-        <article class="service" id="canapes">
-          <h3>Nettoyage de canapés à domicile</h3>
-          <p>
-            Canapés 2 à 3 places, sectionnels et fauteuils. Produits écologiques
-            et sans danger. Élimination des taches et odeurs, séchage rapide.
-          </p>
-          <p><em>Option :</em> traitement antitaches pour protéger le tissu.</p>
-        </article>
+            <h3>Nettoyage des vitres (intérieures & extérieures)</h3>
+            <p>
+              Maisons, condos ou appartements — grandes fenêtres et portes
+              vitrées. Nettoyage garanti sans traces.
+            </p>
 
-        <!-- 3) Tissus d’ameublement / Matelas -->
-        <article class="service" id="tissus">
-          <h3>Nettoyage de tissus d’ameublement</h3>
-          <p>
-            Fauteuils, chaises, matelas, etc. Élimination des mauvaises odeurs,
-            poussière et acariens.
-          </p>
-        </article>
+            <a class="service-link" href="reservation.html">Réserver</a>
+          </article>
 
-        <!-- 4) Désodorisation -->
-        <article class="service" id="desodorisation">
-          <h3>Désodorisation des surfaces</h3>
-          <p>
-            Neutralisation des odeurs d’animaux, d’humidité, etc. Produits
-            naturels et efficaces.
-          </p>
-        </article>
+          <!-- 2) Canapés -->
+          <article class="service-item" id="canapes">
+            <div class="service-badge">
+              <span class="service-badge-inner" aria-hidden="true">
+                <i data-lucide="armchair"></i>
+              </span>
+            </div>
 
-        <!-- 5) Traitement antitaches (service dédié) -->
-        <article class="service" id="antitaches">
-          <h3>Traitement antitaches</h3>
-          <p>
-            Application d’un produit qui empêche les taches de pénétrer et
-            protège vos meubles pour longtemps.
-          </p>
-        </article>
+            <h3>Nettoyage de canapés à domicile</h3>
+            <p>
+              Canapés 2 à 3 places, sectionnels et fauteuils. Produits
+              écologiques et sûrs. Élimination des taches et odeurs, séchage
+              rapide.
+              <br />
+              <em>Option :</em> traitement antitaches (protection du tissu).
+            </p>
 
-        <!-- 6) Informations générales (zone + inclusions) -->
-        <article class="service" id="zone-garanties">
-          <h3>Zone desservie & garanties</h3>
-          <p><strong>Zone :</strong> Montréal et environs.</p>
-          <p>
-            Tous les services incluent le matériel, le déplacement et une
-            garantie de satisfaction.
-          </p>
-          <p>Produits sûrs pour les enfants et les animaux.</p>
-          <p><strong>Devis gratuit :</strong> contactez-nous dès maintenant.</p>
-        </article>
+            <a class="service-link" href="reservation.html">Réserver</a>
+          </article>
+
+          <!-- 3) Matelas -->
+          <article class="service-item" id="matelas">
+            <div class="service-badge">
+              <span class="service-badge-inner" aria-hidden="true">
+                <i data-lucide="bed"></i>
+              </span>
+            </div>
+
+            <h3>Nettoyage des matelas</h3>
+            <p>
+              Nettoyage en profondeur : élimination des taches, odeurs,
+              poussières et acariens. Idéal pour un environnement plus sain.
+            </p>
+
+            <a class="service-link" href="reservation.html">Réserver</a>
+          </article>
+
+          <!-- 4) Tissus d’ameublement -->
+          <article class="service-item" id="tissus">
+            <div class="service-badge">
+              <span class="service-badge-inner" aria-hidden="true">
+                <i data-lucide="sofa"></i>
+              </span>
+            </div>
+
+            <h3>Nettoyage de tissus d’ameublement</h3>
+            <p>
+              Fauteuils, chaises, tissus divers. Élimination des mauvaises
+              odeurs, poussière et acariens.
+            </p>
+
+            <a class="service-link" href="reservation.html">Réserver</a>
+          </article>
+
+          <!-- 5) Désodorisation -->
+          <article class="service-item" id="desodorisation">
+            <div class="service-badge">
+              <span class="service-badge-inner" aria-hidden="true">
+                <i data-lucide="leaf"></i>
+              </span>
+            </div>
+
+            <h3>Désodorisation des surfaces</h3>
+            <p>
+              Neutralisation des odeurs d’animaux, d’humidité, etc. Produits
+              naturels et efficaces.
+            </p>
+
+            <a class="service-link" href="reservation.html">Réserver</a>
+          </article>
+
+          <!-- 6) Traitement antitaches -->
+          <article class="service-item" id="antitaches">
+            <div class="service-badge">
+              <span class="service-badge-inner" aria-hidden="true">
+                <i data-lucide="spray-can"></i>
+              </span>
+            </div>
+
+            <h3>Traitement antitaches</h3>
+            <p>
+              Application d’un produit protecteur qui empêche les taches de
+              pénétrer et prolonge la durée de vie de vos meubles.
+            </p>
+
+            <a class="service-link" href="reservation.html">Réserver</a>
+          </article>
+
+          <!-- 7) Grand Nettoyage -->
+          <article class="service-item" id="grand-nettoyage">
+            <div class="service-badge">
+              <span class="service-badge-inner" aria-hidden="true">
+                <i data-lucide="sparkles"></i>
+              </span>
+            </div>
+
+            <h3>Solutions Grand Nettoyage</h3>
+            <p>
+              Nettoyage complet pour résidences & locaux commerciaux. Idéal
+              après travaux, déménagements ou grands événements.
+            </p>
+
+            <a class="service-link" href="reservation.html">Réserver</a>
+          </article>
+
+          <!-- 8) Zone / Garanties -->
+          <article class="service-item" id="zone-garanties">
+            <div class="service-badge">
+              <span class="service-badge-inner" aria-hidden="true">
+                <i data-lucide="map-pin"></i>
+              </span>
+            </div>
+
+            <h3>Zone desservie & garanties</h3>
+            <p>
+              <strong>Zone :</strong> Montréal et environs.
+              <br />
+              Matériel + déplacement inclus, avec une
+              <strong>garantie de satisfaction</strong>. Produits sûrs pour
+              enfants et animaux.
+            </p>
+
+            <a class="service-link" href="contact.html">Nous contacter</a>
+          </article>
+        </div>
+
+        <!-- CTA global -->
+        <div class="center" style="margin-top: 18px">
+          <a href="reservation.html" class="btn-primary large">
+            Réserver un service
+          </a>
+        </div>
       </section>
-
-      <!-- CTA : renvoie vers la page réservation -->
-      <div class="center">
-        <a href="reservation.html" class="btn-primary large">
-          Réserver un service
-        </a>
-      </div>
     </main>
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
-    <footer class="site-footer">
-      <div class="container">
-        <p>© Nettoie Presto — L'éclat en lui-même</p>
-      </div>
-    </footer>
+    <!-- ✅ FOOTER chargé depuis partials/footer.html -->
+    <div id="footer"></div>
 
-    <!-- JS (validation date réservation + thankyou) -->
+    <!-- =====================================================
+         ICÔNES SOPHISTIQUÉES (Lucide)
+    ====================================================== -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- ✅ Injection des partials + rechargement icônes -->
+    <script>
+      // Header
+      fetch("partials/header.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("header").innerHTML = html;
+          if (window.lucide) lucide.createIcons();
+        });
+
+      // Footer
+      fetch("partials/footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer").innerHTML = html;
+          if (window.lucide) lucide.createIcons();
+        });
+    </script>
+
+    <!-- JS principal (menu mobile etc.) -->
     <script src="js/main.js"></script>
   </body>
 </html>

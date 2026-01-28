@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <!-- Encodage + responsive -->
@@ -22,129 +22,269 @@
   </head>
 
   <body>
-    <!-- =========================
-       HEADER + NAV
-  ========================== -->
-    <header class="site-header">
-      <div class="container header-inner">
-        <!-- Logo (lien vers accueil) -->
-        <a class="logo" href="index.html">
-          <img
-            src="assets/logo_styleA_transparent.png"
-            alt="Nettoie Presto logo"
-          />
-        </a>
-
-        <!-- Navigation principale -->
-        <nav class="main-nav">
-          <a href="index.html">Accueil</a>
-          <a href="services.html">Services</a>
-          <a href="premium.html">Premium</a>
-          <a href="reservation.html" class="btn-primary">Réserver</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
-    </header>
+    <!-- ✅ HEADER chargé depuis partials/header.html -->
+    <div id="header"></div>
 
     <main>
-      <!-- =========================
-         HERO (section principale)
-    ========================== -->
-      <section class="hero">
-        <div class="container hero-grid">
-          <!-- Colonne gauche -->
-          <div class="hero-left">
-            <h1>Service de nettoyage</h1>
-            <p class="lead">
-              Nos services de nettoyage sont conçus pour garder votre maison ou
-              votre entreprise impeccable et accueillante.
-            </p>
+      <!-- =====================================================
+           HERO (background image)
+      ====================================================== -->
+      <section
+        class="hero hero-bg"
+        style="--hero-img: url(&quot;/assets/service_de_nettoyage.jpg&quot;)"
+      >
+        <div class="hero-overlay">
+          <div class="container hero-grid">
+            <div class="hero-left">
+              <h1>Service de nettoyage</h1>
 
-            <!-- =========================
-               Boutons services (liens vers sections de services.html)
-               IMPORTANT : ces liens fonctionnent si services.html contient
-               des IDs correspondants (#vitres, #canapes, etc.)
-          ========================== -->
-            <div class="service-buttons">
-              <a class="service-pill" href="services.html#vitres"
-                >Nettoyage des vitres</a
-              >
-              <a class="service-pill" href="services.html#canapes"
-                >Nettoyage des canapés</a
-              >
-              <a class="service-pill" href="services.html#matelas"
-                >Nettoyage des matelas</a
-              >
-              <a class="service-pill" href="services.html#grand-nettoyage"
-                >Solutions Grand Nettoyage</a
-              >
+              <p class="lead">
+                Nos services de nettoyage sont conçus pour garder votre maison
+                ou votre entreprise impeccable et accueillante.
+              </p>
 
-              <!-- Services additionnels (si tu veux les afficher aussi sur l’accueil) -->
-              <a class="service-pill" href="services.html#tissus"
-                >Tissus d’ameublement</a
-              >
-              <a class="service-pill" href="services.html#desodorisation"
-                >Désodorisation</a
-              >
-              <a class="service-pill" href="services.html#antitaches"
-                >Traitement antitaches</a
-              >
+              <div class="cta-row">
+                <a href="reservation.html" class="btn-primary large">
+                  Réservez maintenant
+                </a>
+              </div>
             </div>
 
-            <!-- Boutons CTA -->
-            <div class="cta-row">
-              <a href="services.html" class="btn-ghost">Nos Services</a>
-              <a href="reservation.html" class="btn-primary large"
-                >Réservez maintenant</a
-              >
-            </div>
+            <!-- Colonne droite (conservée si tu veux du layout) -->
+            <div class="hero-right"></div>
           </div>
+        </div>
+      </section>
 
-          <!-- Colonne droite (photos) -->
-          <div class="hero-right">
-            <div class="promo-badge">30%<span>OFF</span></div>
+      <!-- =====================================================
+           POURQUOI (AVANT les services) — style "comme ton exemple"
+      ====================================================== -->
+      <section class="why-pro">
+        <div class="container">
+          <h2 class="section-title">Pourquoi choisir Nettoie Presto ?</h2>
 
-            <div class="photo-collage">
-              <img src="assets/photo_1.jpg" alt="nettoyage vitres" />
-              <img src="assets/photo_2.jpg" alt="nettoyage canapé" />
-              <img src="assets/photo_3.jpg" alt="grand nettoyage" />
+          <div class="why-pro-grid">
+            <!-- 1 -->
+            <div class="why-pro-card">
+              <div class="why-pro-icon" aria-hidden="true">
+                <i data-lucide="badge-check"></i>
+              </div>
+              <h3>Professionnels</h3>
+              <p>Équipe formée et produits adaptés.</p>
+            </div>
+
+            <!-- 2 -->
+            <div class="why-pro-card">
+              <div class="why-pro-icon" aria-hidden="true">
+                <i data-lucide="clock"></i>
+              </div>
+              <h3>Rapide & fiable</h3>
+              <p>Réservation facile et intervention rapide.</p>
+            </div>
+
+            <!-- 3 -->
+            <div class="why-pro-card">
+              <div class="why-pro-icon" aria-hidden="true">
+                <i data-lucide="leaf"></i>
+              </div>
+              <h3>Écoresponsable</h3>
+              <p>Produits respectueux et techniques sûres.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- =========================
-         POURQUOI NOUS CHOISIR
-    ========================== -->
-      <section class="why container">
-        <h2>Pourquoi choisir Nettoie Presto ?</h2>
-        <div class="grid-3">
-          <div class="card">
-            <h3>Professionnels</h3>
-            <p>Équipe formée et produits adaptés.</p>
+      <!-- =====================================================
+           NOS SERVICES — Nouveau style (image en haut + texte en bas)
+      ====================================================== -->
+      <section class="services-showcase">
+        <div class="container">
+          <h2 class="section-title section-title-lg">Nos services</h2>
+
+          <div class="services-showcase-grid">
+            <!-- Vitres -->
+            <a class="service-tile" href="services.html#vitres">
+              <div class="service-tile-media">
+                <img
+                  src="assets/nettoyage_vitre.jpg"
+                  alt="Nettoyage des vitres"
+                />
+              </div>
+              <div class="service-tile-body">
+                <h3>Nettoyage des vitres</h3>
+                <p>Intérieures & extérieures — résultat sans traces.</p>
+              </div>
+            </a>
+
+            <!-- Canapés -->
+            <a class="service-tile" href="services.html#canapes">
+              <div class="service-tile-media">
+                <img
+                  src="assets/nettoyage_canape.jpg"
+                  alt="Nettoyage des canapés"
+                />
+              </div>
+              <div class="service-tile-body">
+                <h3>Nettoyage des canapés</h3>
+                <p>Taches, odeurs, tissus — séchage rapide.</p>
+              </div>
+            </a>
+
+            <!-- Matelas -->
+            <a class="service-tile" href="services.html#matelas">
+              <div class="service-tile-media">
+                <img
+                  src="assets/nettoyage_matelas.png"
+                  alt="Nettoyage des matelas"
+                />
+              </div>
+              <div class="service-tile-body">
+                <h3>Nettoyage des matelas</h3>
+                <p>Élimination des acariens, odeurs et taches.</p>
+              </div>
+            </a>
+
+            <!-- Grand nettoyage -->
+            <a class="service-tile" href="services.html#grand-nettoyage">
+              <div class="service-tile-media">
+                <img
+                  src="assets/service_grand_nettoyage.jpg"
+                  alt="Solutions Grand Nettoyage"
+                />
+              </div>
+              <div class="service-tile-body">
+                <h3>Solutions Grand Nettoyage</h3>
+                <p>Après travaux, déménagements, événements.</p>
+              </div>
+            </a>
+
+            <!-- Antitaches -->
+            <a class="service-tile" href="services.html#antitaches">
+              <div class="service-tile-media">
+                <img
+                  src="assets/traitement_antitache.jpg"
+                  alt="Traitement antitaches"
+                />
+              </div>
+              <div class="service-tile-body">
+                <h3>Traitement antitaches</h3>
+                <p>Protection invisible pour tissus et meubles.</p>
+              </div>
+            </a>
+
+            <!-- Zone -->
+            <a class="service-tile" href="services.html#zone-garanties">
+              <div class="service-tile-media">
+                <img src="assets/zone_service.jpg" alt="Zone et garanties" />
+              </div>
+              <div class="service-tile-body">
+                <h3>Zone & garanties</h3>
+                <p>Montréal et environs — satisfaction garantie.</p>
+              </div>
+            </a>
           </div>
-          <div class="card">
-            <h3>Rapide & fiable</h3>
-            <p>Réservation facile et intervention rapide.</p>
+
+          <!-- ✅ Bouton "Plus de services" centré sous la grille -->
+          <div class="more-services">
+            <a href="services.html" class="btn-primary large"
+              >Plus de services</a
+            >
           </div>
-          <div class="card">
-            <h3>Écoresponsable</h3>
-            <p>Produits respectueux et techniques sûres.</p>
+        </div>
+      </section>
+
+      <!-- =====================================================
+          RÉALISATIONS — bande défilante
+      ====================================================== -->
+      <section class="realisations">
+        <div class="container">
+          <h2 class="section-title">Nos réalisations</h2>
+          <p class="realisations-sub">
+            Quelques exemples avant / après — interventions récentes.
+          </p>
+
+          <div
+            class="realisations-marquee"
+            aria-label="Bande de photos de réalisations"
+          >
+            <div class="realisations-track">
+              <!-- ✅ 1er set -->
+              <img
+                src="assets/realisations/canape_fait.jpg"
+                alt="Réalisation 1"
+              />
+              <img
+                src="assets/realisations/service_vitres_ext.jpg"
+                alt="Réalisation 2"
+              />
+
+              <!-- ✅ 2e set (duplication pour boucle infinie fluide) -->
+              <img
+                src="assets/realisations/canape_fait.jpg"
+                alt="Réalisation 1"
+              />
+              <img
+                src="assets/realisations/service_vitres_ext.jpg"
+                alt="Réalisation 2"
+              />
+              <img
+                src="assets/realisations/canape_fait.jpg"
+                alt="Réalisation 1"
+              />
+              <img
+                src="assets/realisations/service_vitres_ext.jpg"
+                alt="Réalisation 2"
+              />
+              <img
+                src="assets/realisations/canape_fait.jpg"
+                alt="Réalisation 1"
+              />
+              <img
+                src="assets/realisations/service_vitres_ext.jpg"
+                alt="Réalisation 2"
+              />
+              <img
+                src="assets/realisations/canape_fait.jpg"
+                alt="Réalisation 1"
+              />
+              <img
+                src="assets/realisations/service_vitres_ext.jpg"
+                alt="Réalisation 2"
+              />
+            </div>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- =========================
-       FOOTER
-  ========================== -->
-    <footer class="site-footer">
-      <div class="container">
-        <p>© <strong>Nettoie Presto</strong> — L'éclat en lui-même</p>
-      </div>
-    </footer>
+    <!-- ✅ FOOTER chargé depuis partials/footer.html -->
+    <div id="footer"></div>
 
-    <!-- JS principal -->
+    <!-- =====================================================
+         ICÔNES SOPHISTIQUÉES (Lucide)
+    ====================================================== -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- ✅ Injection des partials + rechargement icônes -->
+    <script>
+      // Header
+      fetch("partials/header.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("header").innerHTML = html;
+          if (window.lucide) lucide.createIcons();
+        });
+
+      // Footer
+      fetch("partials/footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer").innerHTML = html;
+          if (window.lucide) lucide.createIcons();
+        });
+    </script>
+
+    <!-- JS principal (menu mobile etc.) -->
     <script src="js/main.js"></script>
   </body>
 </html>

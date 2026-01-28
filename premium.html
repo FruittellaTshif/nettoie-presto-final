@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <!-- Encodage + responsive -->
@@ -19,122 +19,137 @@
   </head>
 
   <body>
-    <!-- =========================
-       HEADER + NAV
-  ========================== -->
-    <header class="site-header">
-      <div class="container header-inner">
-        <!-- Logo cliquable vers l'accueil -->
-        <a class="logo" href="index.html">
-          <img
-            src="assets/logo_styleA_transparent.png"
-            alt="Logo Nettoie Presto"
-          />
-        </a>
-
-        <!-- Navigation principale -->
-        <nav class="main-nav">
-          <a href="index.html">Accueil</a>
-          <a href="services.html">Services</a>
-          <a href="premium.html" class="active">Premium</a>
-          <a href="reservation.html" class="btn-primary">Réserver</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
-    </header>
+    <!-- ✅ HEADER chargé depuis partials/header.html -->
+    <div id="header"></div>
 
     <!-- =========================
        CONTENU PRINCIPAL
-  ========================== -->
-    <main class="container">
-      <!-- En-tête de page -->
-      <section class="page-header">
-        <h1>Service Premium</h1>
-        <p>
-          Nettoyage de canapé avec traitement complet : résultats visibles,
-          protection durable.
-        </p>
-      </section>
-
-      <!-- =========================
-         CARTES : OFFRE PREMIUM
-         (basé sur le PDF)
+       STYLE PREMIUM "DARK + COULEURS"
+       (sans image en background)
     ========================== -->
-      <section class="premium-list">
-        <!-- Carte 1 : Description générale -->
-        <div class="card">
-          <h3>Nettoyage de canapé — Traitement complet</h3>
-          <p>
-            Nettoyage en profondeur avec produits écologiques et
-            hypoallergéniques, désodorisation professionnelle, traitement
-            antitaches invisible, séchage rapide et finition soignée.
-          </p>
-          <!-- Source PDF : inclusions complètes -->
-          <!-- :contentReference[oaicite:1]{index=1} -->
-        </div>
+    <main>
+      <section class="premium-dark">
+        <div class="container premium-dark-inner">
+          <!-- En-tête Premium -->
+          <header class="premium-head">
+            <p class="premium-badge">
+              <span class="premium-badge-dot"></span>
+              Offre Premium
+            </p>
 
-        <!-- Carte 2 : Ce qui est inclus -->
-        <div class="card">
-          <h3>Ce qui est inclus</h3>
-          <ul>
-            <li>
-              Nettoyage en profondeur du canapé (2–3 places ou sectionnel)
-            </li>
-            <li>Produits écologiques et hypoallergéniques</li>
-            <li>Désodorisation professionnelle (mauvaises odeurs)</li>
-            <li>Traitement antitaches invisible (protection du tissu)</li>
-            <li>Séchage rapide + finition soignée</li>
-          </ul>
-          <!-- :contentReference[oaicite:2]{index=2} -->
-        </div>
+            <h1 class="premium-title">Services Premium</h1>
 
-        <!-- Carte 3 : Avantages -->
-        <div class="card">
-          <h3>Avantages du Premium</h3>
-          <ul>
-            <li>Protection longue durée contre liquides et salissures</li>
-            <li>Améliore l’aspect visuel et prolonge la durée de vie</li>
-            <li>Idéal enfants, animaux, tissus délicats</li>
-            <li>Résultat immédiat visible + toucher doux après nettoyage</li>
-          </ul>
-          <!-- :contentReference[oaicite:3]{index=3} -->
-        </div>
+            <p class="premium-subtitle">
+              Nettoyage de canapé avec traitement complet : résultats visibles,
+              protection durable.
+            </p>
+          </header>
 
-        <!-- Carte 4 : Tarifs -->
-        <div class="card">
-          <h3>Tarifs</h3>
-          <p><strong>Canapé 2–3 places :</strong> 210 $ + taxes</p>
-          <p><strong>Canapé sectionnel :</strong> 280 $ + taxes</p>
-          <!-- :contentReference[oaicite:4]{index=4} -->
-        </div>
+          <!-- Grille des cartes (mêmes contenus qu'avant) -->
+          <section class="premium-grid">
+            <!-- Carte 1 : Description générale -->
+            <article class="premium-card">
+              <div class="premium-card-icon">
+                <i data-lucide="sparkles"></i>
+              </div>
+              <h3>Nettoyage de canapé — Traitement complet</h3>
+              <p>
+                Nettoyage en profondeur avec produits écologiques et
+                hypoallergéniques, désodorisation professionnelle, traitement
+                antitaches invisible, séchage rapide et finition soignée.
+              </p>
+            </article>
 
-        <!-- Carte 5 : Zone + promesse de service -->
-        <div class="card">
-          <h3>Zone desservie & service</h3>
-          <p>Zone : Montréal et alentours.</p>
-          <p>Service à domicile rapide, équipe professionnelle garantie.</p>
-          <!-- :contentReference[oaicite:5]{index=5} -->
+            <!-- Carte 2 : Ce qui est inclus -->
+            <article class="premium-card">
+              <div class="premium-card-icon">
+                <i data-lucide="check-circle-2"></i>
+              </div>
+              <h3>Ce qui est inclus</h3>
+              <ul>
+                <li>
+                  Nettoyage en profondeur du canapé (2–3 places ou sectionnel)
+                </li>
+                <li>Produits écologiques et hypoallergéniques</li>
+                <li>Désodorisation professionnelle (mauvaises odeurs)</li>
+                <li>Traitement antitaches invisible (protection du tissu)</li>
+                <li>Séchage rapide + finition soignée</li>
+              </ul>
+            </article>
+
+            <!-- Carte 3 : Avantages -->
+            <article class="premium-card">
+              <div class="premium-card-icon">
+                <i data-lucide="shield-check"></i>
+              </div>
+              <h3>Avantages du Premium</h3>
+              <ul>
+                <li>Protection longue durée contre liquides et salissures</li>
+                <li>Améliore l’aspect visuel et prolonge la durée de vie</li>
+                <li>Idéal enfants, animaux, tissus délicats</li>
+                <li>Résultat visible + toucher doux après nettoyage</li>
+              </ul>
+            </article>
+
+            <!-- Carte 4 : Tarifs -->
+            <article class="premium-card">
+              <div class="premium-card-icon">
+                <i data-lucide="badge-dollar-sign"></i>
+              </div>
+              <h3>Tarifs</h3>
+              <p><strong>Canapé 2–3 places :</strong> 210 $ + taxes</p>
+              <p><strong>Canapé sectionnel :</strong> 280 $ + taxes</p>
+            </article>
+
+            <!-- Carte 5 : Zone + promesse de service -->
+            <article class="premium-card">
+              <div class="premium-card-icon">
+                <i data-lucide="map-pin"></i>
+              </div>
+              <h3>Zone desservie & service</h3>
+              <p><strong>Zone :</strong> Montréal et alentours.</p>
+              <p>Service à domicile rapide, équipe professionnelle garantie.</p>
+            </article>
+          </section>
+
+          <!-- CTA principal -->
+          <div class="center" style="margin-top: 18px">
+            <a href="reservation.html" class="btn-primary large">
+              Réserver un service Premium
+            </a>
+          </div>
         </div>
       </section>
-
-      <!-- CTA principal -->
-      <div class="center">
-        <a href="reservation.html" class="btn-primary large"
-          >Réserver un service Premium</a
-        >
-      </div>
     </main>
 
-    <!-- =========================
-       FOOTER
-  ========================== -->
-    <footer class="site-footer">
-      <div class="container">
-        <p>© Nettoie Presto — L'éclat en lui-même</p>
-      </div>
-    </footer>
+    <!-- ✅ FOOTER chargé depuis partials/footer.html -->
+    <div id="footer"></div>
 
-    <!-- JS principal (validation date + thankyou) -->
+    <!-- =====================================================
+         ICÔNES SOPHISTIQUÉES (Lucide)
+    ====================================================== -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- ✅ Injection des partials + rechargement icônes -->
+    <script>
+      // Header
+      fetch("partials/header.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("header").innerHTML = html;
+          if (window.lucide) lucide.createIcons();
+        });
+
+      // Footer
+      fetch("partials/footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer").innerHTML = html;
+          if (window.lucide) lucide.createIcons();
+        });
+    </script>
+
+    <!-- JS principal (menu mobile etc.) -->
     <script src="js/main.js"></script>
   </body>
 </html>
