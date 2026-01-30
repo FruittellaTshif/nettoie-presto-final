@@ -23,11 +23,20 @@
 
   <body>
     <!-- ✅ HEADER chargé depuis partials/header.html -->
-    <div id="header"></div>
+    <div id="header">
+      <!-- ✅ Fallback (si jamais le fetch échoue) -->
+      <noscript>
+        <div class="container" style="padding: 16px">
+          <strong>Javascript est désactivé.</strong> Le menu ne peut pas se charger.
+        </div>
+      </noscript>
+    </div>
 
     <main>
       <!-- =====================================================
            HERO (background image)
+           ✅ hero-overlay existe dans HTML -> on garde,
+           mais on ajoutera le style dans le CSS si besoin.
       ====================================================== -->
       <section
         class="hero hero-bg"
@@ -57,7 +66,7 @@
       </section>
 
       <!-- =====================================================
-           POURQUOI (AVANT les services) — style "comme ton exemple"
+           POURQUOI (AVANT les services)
       ====================================================== -->
       <section class="why-pro">
         <div class="container">
@@ -186,9 +195,7 @@
 
           <!-- ✅ Bouton "Plus de services" centré sous la grille -->
           <div class="more-services">
-            <a href="services.html" class="btn-primary large"
-              >Plus de services</a
-            >
+            <a href="services.html" class="btn-primary large">Plus de services</a>
           </div>
         </div>
       </section>
@@ -267,12 +274,22 @@
 
     <!-- ✅ Injection des partials + rechargement icônes -->
     <script>
+      // ✅ Petite fonction utilitaire (propre)
+      function safeCreateIcons() {
+        if (window.lucide) lucide.createIcons();
+      }
+
       // Header
       fetch("partials/header.html")
         .then((res) => res.text())
         .then((html) => {
           document.getElementById("header").innerHTML = html;
-          if (window.lucide) lucide.createIcons();
+          safeCreateIcons();
+        })
+        .catch(() => {
+          // ✅ Fallback minimal si le header ne charge pas
+          document.getElementById("header").innerHTML =
+            '<div class="container" style="padding:16px">Menu indisponible (chargement impossible).</div>';
         });
 
       // Footer
@@ -280,11 +297,17 @@
         .then((res) => res.text())
         .then((html) => {
           document.getElementById("footer").innerHTML = html;
-          if (window.lucide) lucide.createIcons();
+          safeCreateIcons();
+        })
+        .catch(() => {
+          document.getElementById("footer").innerHTML =
+            '<div class="container" style="padding:16px">Pied de page indisponible.</div>';
         });
     </script>
 
     <!-- JS principal (menu mobile etc.) -->
-    <script src="js/main.js"></script>
+    <!-- ✅ defer = charge après parsing HTML, plus stable -->
+    <script src="js/main.js" defer></script>
   </body>
 </html>
+
