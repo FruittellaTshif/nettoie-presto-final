@@ -225,6 +225,13 @@ img {
   color: #fff;
 }
 
+/* ✅ Overlay hero (utilisé dans le HTML) */
+.hero-overlay {
+  /* évite les comportements bizarres et garde le contenu bien centré */
+  width: 100%;
+}
+
+
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr;
