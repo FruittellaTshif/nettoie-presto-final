@@ -1,17 +1,27 @@
 <header class="site-header">
   <div class="container header-inner">
+    <!-- =====================================================
+         BRAND
+         - Gardé identique (logo + slogan)
+    ====================================================== -->
     <a class="brand" href="index.html">
       <span class="brand-logo">
         <img src="assets/logo_styleA_round.png" alt="Nettoie Presto logo" />
         <span class="brand-name">Nettoie Presto</span>
       </span>
+
       <span class="brand-slogan">
         La solution rapide <br />
         Pour un nettoyage parfait
       </span>
     </a>
 
-    <nav class="main-nav">
+    <!-- =====================================================
+         NAV DESKTOP
+         ✅ Affichée uniquement desktop
+         ✅ Mobile: cachée via CSS @media (max-width:768px)
+    ====================================================== -->
+    <nav class="main-nav" aria-label="Navigation principale">
       <a href="index.html">Accueil</a>
       <a href="services.html">Services</a>
       <a href="premium.html">Premium</a>
@@ -19,9 +29,27 @@
       <a href="contact.html">Contact</a>
     </nav>
 
-    <button class="nav-toggle" aria-label="Ouvrir le menu">☰</button>
+    <!-- =====================================================
+         BOUTON MENU MOBILE
+         ✅ aria-controls: lié au menu
+         ✅ aria-expanded: état ouvert/fermé (mis à jour en JS)
+    ====================================================== -->
+    <button
+      class="nav-toggle"
+      aria-label="Ouvrir le menu"
+      aria-controls="mobileNav"
+      aria-expanded="false"
+      type="button"
+    >
+      ☰
+    </button>
 
-    <div class="mobile-nav hidden" id="mobileNav">
+    <!-- =====================================================
+         NAV MOBILE
+         ✅ hidden (display:none) par défaut
+         ✅ show (display:block) quand ouvert
+    ====================================================== -->
+    <div class="mobile-nav hidden" id="mobileNav" aria-label="Menu mobile">
       <a href="index.html">Accueil</a>
       <a href="services.html">Services</a>
       <a href="premium.html">Premium</a>
@@ -30,3 +58,4 @@
     </div>
   </div>
 </header>
+
