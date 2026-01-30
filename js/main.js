@@ -1,6 +1,6 @@
 // =====================================================
 // Script principal - Nettoie Presto
-// - Menu mobile (hamburger)
+// - Menu mobile (hamburger) ✅ compatible header injecté (fetch partials)
 // - Réservation (date min + validation)
 // - Affichage du message thankyou
 // - Validation UX (Option X) -> UNIQUEMENT au submit
@@ -9,21 +9,26 @@
 // - Remplissage Reply-To (FormSubmit)
 // =====================================================
 
-document.addEventListener("DOMContentLoaded", function () {
-  /* =====================================================
-     0️⃣ MENU MOBILE (HAMBURGER) - VERSION PRO
-     ✅ Ouvre/ferme
-     ✅ Ferme quand on clique un lien
-     ✅ Ferme quand on clique en dehors
-     ✅ Met à jour aria-expanded + icône
-  ===================================================== */
+/* =====================================================
+   0️⃣ MENU MOBILE (HAMBURGER) - INIT PRO
+   ✅ IMPORTANT:
+   THeader est injecté via fetch("partials/header.html")
+   donc .nav-toggle et #mobileNav n'existent pas au DOMContentLoaded.
+   -> On met une init réutilisable + on relance quand le header apparaît.
+===================================================== */
+function initMobileMenu() {
   const navToggle = document.querySelector(".nav-toggle");
   const mobileNav = document.getElementById("mobileNav");
 
-  // Helpers menu (plus stable/clean)
-  function openMobileNav() {
-    if (!mobileNav || !navToggle) return;
+  // Si le header n'est pas encore injecté => on sort
+  if (!navToggle || !mobileNav) return false;
 
+  // ✅ Empêche d'attacher plusieurs fois les events
+  if (navToggle.dataset.bound === "1") return true;
+  navToggle.dataset.bound = "1";
+
+  // Helpers menu (stable/clean)
+  function openMobileNav() {
     mobileNav.classList.remove("hidden");
     mobileNav.classList.add("show");
 
@@ -32,8 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function closeMobileNav() {
-    if (!mobileNav || !navToggle) return;
-
     mobileNav.classList.add("hidden");
     mobileNav.classList.remove("show");
 
@@ -42,51 +45,74 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function toggleMobileNav() {
-    if (!mobileNav || !navToggle) return;
-
     const isOpen = mobileNav.classList.contains("show");
     if (isOpen) closeMobileNav();
     else openMobileNav();
   }
 
-  if (navToggle && mobileNav) {
-    // État initial (sécurité)
-    navToggle.setAttribute(
-      "aria-expanded",
-      mobileNav.classList.contains("show") ? "true" : "false"
-    );
+  // État initial (sécurité)
+  navToggle.setAttribute(
+    "aria-expanded",
+    mobileNav.classList.contains("show") ? "true" : "false"
+  );
 
-    navToggle.addEventListener("click", (e) => {
-      e.stopPropagation(); // évite fermeture immédiate (click outside)
-      toggleMobileNav();
-    });
+  // Click burger
+  navToggle.addEventListener("click", (e) => {
+    e.stopPropagation(); // évite fermeture immédiate (click outside)
+    toggleMobileNav();
+  });
 
-    // ✅ Fermer le menu si on clique un lien (UX pro)
-    mobileNav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => closeMobileNav());
-    });
+  // ✅ Fermer le menu si on clique un lien (UX pro)
+  mobileNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => closeMobileNav());
+  });
 
-    // ✅ Fermer si on clique en dehors du menu
-    document.addEventListener("click", (e) => {
-      const target = e.target;
+  // ✅ Fermer si on clique en dehors du menu
+  document.addEventListener("click", (e) => {
+    const target = e.target;
 
-      // Si on clique sur le bouton -> déjà géré
-      if (navToggle.contains(target)) return;
+    if (navToggle.contains(target)) return; // bouton
+    if (mobileNav.contains(target)) return; // menu
 
-      // Si on clique dans le menu -> on laisse
-      if (mobileNav.contains(target)) return;
+    if (mobileNav.classList.contains("show")) closeMobileNav();
+  });
 
-      // Sinon -> on ferme
-      if (mobileNav.classList.contains("show")) closeMobileNav();
-    });
+  // ✅ Fermer si on redimensionne vers desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768 && mobileNav.classList.contains("show")) {
+      closeMobileNav();
+    }
+  });
 
-    // ✅ Fermer si on redimensionne vers desktop (évite état “bloqué”)
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768 && mobileNav.classList.contains("show")) {
-        closeMobileNav();
-      }
-    });
-  }
+  return true;
+}
+
+/* =====================================================
+   ✅ WATCHER: détecte quand le header injecté arrive
+   -> et initialise le menu dès que .nav-toggle existe.
+   (permet de ne modifier qu'un seul fichier: main.js)
+===================================================== */
+function watchForInjectedHeader() {
+  // si déjà ok, inutile
+  if (initMobileMenu()) return;
+
+  const observer = new MutationObserver(() => {
+    if (initMobileMenu()) observer.disconnect();
+  });
+
+  observer.observe(document.documentElement, {
+    childList: true,
+    subtree: true,
+  });
+
+  // sécurité: stop après 5s (évite observer infini)
+  setTimeout(() => observer.disconnect(), 5000);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  // ✅ Tente l'init direct + watch si header arrive après
+  initMobileMenu();
+  watchForInjectedHeader();
 
   /* =====================================================
      1️⃣ CONFIGURATION DU CHAMP DATE (Réservation)
@@ -286,4 +312,5 @@ document.addEventListener("DOMContentLoaded", function () {
     // ✅ Sinon, le formulaire s'envoie
   });
 });
+
 
