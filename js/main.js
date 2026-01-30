@@ -11,20 +11,80 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   /* =====================================================
-     0️⃣ MENU MOBILE (HAMBURGER)
+     0️⃣ MENU MOBILE (HAMBURGER) - VERSION PRO
+     ✅ Ouvre/ferme
+     ✅ Ferme quand on clique un lien
+     ✅ Ferme quand on clique en dehors
+     ✅ Met à jour aria-expanded + icône
   ===================================================== */
   const navToggle = document.querySelector(".nav-toggle");
   const mobileNav = document.getElementById("mobileNav");
 
+  // Helpers menu (plus stable/clean)
+  function openMobileNav() {
+    if (!mobileNav || !navToggle) return;
+
+    mobileNav.classList.remove("hidden");
+    mobileNav.classList.add("show");
+
+    navToggle.setAttribute("aria-expanded", "true");
+    navToggle.textContent = "✕";
+  }
+
+  function closeMobileNav() {
+    if (!mobileNav || !navToggle) return;
+
+    mobileNav.classList.add("hidden");
+    mobileNav.classList.remove("show");
+
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.textContent = "☰";
+  }
+
+  function toggleMobileNav() {
+    if (!mobileNav || !navToggle) return;
+
+    const isOpen = mobileNav.classList.contains("show");
+    if (isOpen) closeMobileNav();
+    else openMobileNav();
+  }
+
   if (navToggle && mobileNav) {
-    navToggle.addEventListener("click", () => {
-      const isHidden = mobileNav.classList.contains("hidden");
+    // État initial (sécurité)
+    navToggle.setAttribute(
+      "aria-expanded",
+      mobileNav.classList.contains("show") ? "true" : "false"
+    );
 
-      mobileNav.classList.toggle("hidden");
-      mobileNav.classList.toggle("show", isHidden);
+    navToggle.addEventListener("click", (e) => {
+      e.stopPropagation(); // évite fermeture immédiate (click outside)
+      toggleMobileNav();
+    });
 
-      navToggle.setAttribute("aria-expanded", String(isHidden));
-      navToggle.textContent = isHidden ? "✕" : "☰";
+    // ✅ Fermer le menu si on clique un lien (UX pro)
+    mobileNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => closeMobileNav());
+    });
+
+    // ✅ Fermer si on clique en dehors du menu
+    document.addEventListener("click", (e) => {
+      const target = e.target;
+
+      // Si on clique sur le bouton -> déjà géré
+      if (navToggle.contains(target)) return;
+
+      // Si on clique dans le menu -> on laisse
+      if (mobileNav.contains(target)) return;
+
+      // Sinon -> on ferme
+      if (mobileNav.classList.contains("show")) closeMobileNav();
+    });
+
+    // ✅ Fermer si on redimensionne vers desktop (évite état “bloqué”)
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768 && mobileNav.classList.contains("show")) {
+        closeMobileNav();
+      }
     });
   }
 
@@ -181,7 +241,6 @@ document.addEventListener("DOMContentLoaded", function () {
   fields.forEach((field) => {
     if (field.type === "hidden" || field.name === "_honey") return;
 
-    // input = frappe, change = select/date
     const removeNow = () => clearError(field);
 
     field.addEventListener("input", removeNow);
@@ -227,3 +286,4 @@ document.addEventListener("DOMContentLoaded", function () {
     // ✅ Sinon, le formulaire s'envoie
   });
 });
+
