@@ -1,6 +1,7 @@
 /* =========================================================
    Nettoie Presto - style.css
    Version complète (propre + commentée)
+   ✅ Responsive Mobile/Tablet ajouté
 ========================================================= */
 
 /* =========================
@@ -39,6 +40,14 @@
 ========================= */
 * {
   box-sizing: border-box;
+}
+
+/* ✅ Anti “bande blanche à droite” / scroll horizontal */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -162,7 +171,7 @@ img {
    NAV MOBILE
 ========================= */
 .nav-toggle {
-  display: none;
+  display: none; /* ✅ activé en mobile dans les media queries */
   font-size: 26px;
   background: none;
   border: none;
@@ -551,7 +560,7 @@ label.invalid .error-message {
    ✅ SERVICES PAGE (nouveau style comme ton exemple)
 ===================================================== */
 .services-hero {
-   background-image:
+  background-image:
     linear-gradient(rgba(11, 35, 64, 0.55), rgba(11, 35, 64, 0.55)),
     url("../assets/service_page.jpg");
   background-size: cover;
@@ -828,9 +837,6 @@ label.invalid .error-message {
 
 /* =====================================================
    ✅ CONTACT (PRO) — 3 colonnes / 1 ligne (desktop)
-   - Beaucoup d’espace autour
-   - Icône ronde, carte propre
-   - Responsive: 2 colonnes tablette, 1 colonne mobile
 ===================================================== */
 
 /* Titre contact */
@@ -856,15 +862,15 @@ label.invalid .error-message {
 /* Wrapper (espace tout autour du bloc) */
 .contact-panel {
   margin-top: 22px;
-  padding: 0 28px; /* ✅ espace gauche/droite */
+  padding: 0 28px;
 }
 
 /* Grille 3 colonnes */
 .contact-panel-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* ✅ 3 colonnes */
-  gap: 18px; /* ✅ espace entre cartes */
-  padding: 18px; /* ✅ espace intérieur global */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding: 18px;
   border-radius: 18px;
   background: rgba(11, 87, 179, 0.05);
   border: 1px solid rgba(230, 233, 239, 0.95);
@@ -954,38 +960,6 @@ label.invalid .error-message {
 }
 
 /* =====================================================
-   Responsive contact
-===================================================== */
-@media (max-width: 992px) {
-  .contact-panel {
-    padding: 0 18px;
-  }
-
-  .contact-panel-grid {
-    grid-template-columns: repeat(2, 1fr); /* ✅ 2 colonnes tablette */
-  }
-
-  .contact-top h1 {
-    font-size: 40px;
-  }
-}
-
-@media (max-width: 768px) {
-  .contact-panel {
-    padding: 0 12px;
-  }
-
-  .contact-panel-grid {
-    grid-template-columns: 1fr; /* ✅ 1 colonne mobile */
-    padding: 14px;
-  }
-
-  .contact-top h1 {
-    font-size: 32px;
-  }
-}
-
-/* =====================================================
    ✅ INDEX — Bouton "Plus de services" sous la grille
 ===================================================== */
 .services-showcase .more-services {
@@ -994,21 +968,17 @@ label.invalid .error-message {
   justify-content: center;
 }
 
-/* petit hover pro (optionnel mais clean) */
 .services-showcase .more-services .btn-primary:hover {
   filter: brightness(0.98);
 }
 
 /* =====================================================
    FOOTER (style gris/noir comme l'exemple)
-   - brand comme header
-   - uniquement infos contact
-   - "Made by Fruittella" au-dessus des icônes
 ===================================================== */
 
 .footer-dark {
   margin-top: 40px;
-  background: #121416; /* gris/noir */
+  background: #121416;
   color: rgba(255, 255, 255, 0.82);
 }
 
@@ -1024,7 +994,7 @@ label.invalid .error-message {
   align-items: start;
 }
 
-/* Brand (reprend ton style .brand mais adapte la lisibilité) */
+/* Brand */
 .footer-brand {
   color: rgba(255, 255, 255, 0.92);
 }
@@ -1157,22 +1127,8 @@ label.invalid .error-message {
   font-weight: 600;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .footer-top {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-dark-inner {
-    padding: 28px 14px 22px;
-  }
-}
-
 /* =====================================================
    RÉALISATIONS — bande défilante (images verticales)
-   - Style pro
-   - Pause au hover
-   - Responsive
 ===================================================== */
 
 .realisations {
@@ -1260,8 +1216,143 @@ label.invalid .error-message {
   }
 }
 
-/* Responsive */
+/* =====================================================
+   ✅ RESPONSIVE GLOBAL (TABLETTE / MOBILE)
+===================================================== */
+
+/* ---------- Tablette ---------- */
+@media (max-width: 1024px) {
+  /* Grilles: on réduit les colonnes */
+  .why-pro-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .premium-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Contact déjà géré en 992px, mais ici on sécurise */
+  .contact-panel {
+    padding: 0 18px;
+  }
+}
+
+/* ---------- Mobile ---------- */
 @media (max-width: 768px) {
+  /* ✅ Navbar: on cache desktop et on active le bouton mobile */
+  .main-nav {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(11, 87, 179, 0.08);
+    color: var(--dark);
+  }
+
+  /* Le header doit rester clean et respirer */
+  .header-inner {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* Slogan trop long -> on évite que ça casse */
+  .brand-slogan {
+    max-width: 100%;
+    font-size: 13px;
+  }
+
+  /* Sections: padding plus fin sur mobile */
+  .container {
+    padding: 16px;
+  }
+
+  /* Hero: tailles adaptées */
+  .hero {
+    padding: 56px 0;
+  }
+
+  .hero-left h1 {
+    font-size: clamp(30px, 8vw, 44px);
+    line-height: 1.05;
+  }
+
+  .hero-left .lead {
+    font-size: 15px;
+  }
+
+  /* CTA: bouton en pleine largeur (plus pro) */
+  .cta-row {
+    width: 100%;
+  }
+
+  .btn-primary.large {
+    width: 100%;
+    max-width: 520px;
+  }
+
+  /* Grilles en 1 colonne */
+  .why-pro-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .services-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .services-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .premium-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Formulaire: 2 colonnes -> 1 colonne */
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .span-2 {
+    grid-column: auto;
+  }
+
+  /* Services hero title: trop gros sur mobile */
+  .services-hero-inner h1 {
+    font-size: clamp(30px, 8vw, 44px);
+  }
+
+  .services-hero-inner p {
+    font-size: 15px;
+  }
+
+  /* Footer: déjà bon, on sécurise l’empilement */
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-dark-inner {
+    padding: 28px 14px 22px;
+  }
+
+  /* Responsive réalisations */
   .realisations-track img {
     width: 150px;
     height: 230px;
@@ -1271,3 +1362,34 @@ label.invalid .error-message {
     animation-duration: 20s;
   }
 }
+
+/* ---------- Responsive contact (ton code d’origine gardé) ---------- */
+@media (max-width: 992px) {
+  .contact-panel {
+    padding: 0 18px;
+  }
+
+  .contact-panel-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-top h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-panel {
+    padding: 0 12px;
+  }
+
+  .contact-panel-grid {
+    grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  .contact-top h1 {
+    font-size: 32px;
+  }
+}
+
