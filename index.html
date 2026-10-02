@@ -25,6 +25,9 @@
       />
     
       <meta name="author" content="Nettoie Presto" />
+
+      <!-- SEO local : indique aux moteurs de recherche la ville principale desservie. -->
+      <meta name="geo.placename" content="Saskatoon, Saskatchewan" />
     
       <!-- Canonical -->
       <link rel="canonical" href="https://www.nettoiepresto.ca/" />
@@ -49,6 +52,26 @@
       />
       <meta property="og:url" content="https://www.nettoiepresto.ca/" />
       <meta property="og:type" content="website" />
+      <!-- Données structurées locales (Schema.org) : décrivent l'entreprise à Google. -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CleaningService",
+        "name": "Nettoie Presto",
+        "url": "https://www.nettoiepresto.ca/",
+        "email": "nettoiepresto@gmail.com",
+        "telephone": "+1-514-448-5273",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "431 4th Avenue",
+          "addressLocality": "Saskatoon",
+          "addressRegion": "SK",
+          "postalCode": "S7K 2M4",
+          "addressCountry": "CA"
+        },
+        "areaServed": "Saskatoon, Saskatchewan"
+      }
+      </script>
     </head>
 
 
