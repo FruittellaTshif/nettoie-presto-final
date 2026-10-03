@@ -18,13 +18,8 @@
         name="description"
         content="Nettoie Presto — Service professionnel de nettoyage à Saskatoon et environs. Vitres, canapés, matelas, grand nettoyage et traitement antitaches. Réservation rapide."
       />
-    
-      <meta
-        name="keywords"
-        content="nettoyage Saskatoon, nettoyage vitres Saskatoon, nettoyage canapé Saskatoon, nettoyage matelas Saskatoon, grand nettoyage Saskatoon, traitement antitaches"
-      />
-    
-      <meta name="author" content="Nettoie Presto" />
+      <!-- Google n'utilise pas la balise meta keywords : le référencement repose plutôt sur le contenu, les titres et la pertinence locale. -->
+<meta name="author" content="Nettoie Presto" />
 
       <!-- SEO local : indique aux moteurs de recherche la ville principale desservie. -->
       <meta name="geo.placename" content="Saskatoon, Saskatchewan" />
@@ -52,11 +47,13 @@
       />
       <meta property="og:url" content="https://www.nettoiepresto.ca/" />
       <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Nettoie Presto" />
+      <meta property="og:locale" content="fr_CA" />
       <!-- Données structurées locales (Schema.org) : décrivent l'entreprise à Google. -->
       <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "CleaningService",
+        "@type": "LocalBusiness",
         "name": "Nettoie Presto",
         "url": "https://www.nettoiepresto.ca/",
         "email": "nettoiepresto@gmail.com",
@@ -69,7 +66,10 @@
           "postalCode": "S7K 2M4",
           "addressCountry": "CA"
         },
-        "areaServed": "Saskatoon, Saskatchewan"
+        "areaServed": {
+          "@type": "City",
+          "name": "Saskatoon"
+        }
       }
       </script>
     </head>
@@ -99,7 +99,7 @@
         <div class="hero-overlay">
           <div class="container hero-grid">
             <div class="hero-left">
-              <h1>Service de nettoyage</h1>
+              <h1>Service de nettoyage à Saskatoon</h1>
 
               <p class="lead">
                 Nos services de nettoyage sont conçus pour garder votre maison
