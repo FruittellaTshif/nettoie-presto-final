@@ -117,5 +117,12 @@
 
     <!-- JS principal (menu mobile etc.) -->
     <script src="../js/main.js"></script>
+    <!-- Le switch EN/FR conserve la page correspondante. -->
+    <script>
+      document.querySelectorAll('[data-lang-switch="fr"]').forEach((link) => {
+        const page = location.pathname.split('/').pop() || 'index.html';
+        link.href = '../' + page;
+      });
+    </script>
   </body>
 </html>
