@@ -124,5 +124,6 @@
         link.href = '../' + page;
       });
     </script>
-  </body>
+  <script>/* Conserve la page lors du changement de langue. */ document.querySelectorAll('[data-lang-switch="fr"]').forEach(a=>{a.href='../'+(location.pathname.split('/').pop()||'index.html')});</script>
+</body>
 </html>
