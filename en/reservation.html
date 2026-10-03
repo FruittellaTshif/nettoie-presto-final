@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Encodage UTF-8 (accents, caractères spéciaux) -->
+    <meta charset="utf-8" />
+
+    <!-- Responsive : adapte l’affichage à tous les écrans -->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Titre -->
+    <!-- SEO : titre, description et URL officielle affichés aux moteurs de recherche. -->
+    <title>Book Cleaning Services in Saskatoon — Nettoie Presto</title>
+    <meta name="description" content="Book Nettoie Presto cleaning services online in Saskatoon, Saskatchewan." />
+    <link rel="canonical" href="https://www.nettoiepresto.ca/en/reservation.html" />
+    <!-- SEO bilingue : indique à Google les versions française et anglaise de cette page. -->
+    <link rel="alternate" hreflang="fr-CA" href="https://www.nettoiepresto.ca/reservation.html" />
+    <link rel="alternate" hreflang="en-CA" href="https://www.nettoiepresto.ca/en/reservation.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.nettoiepresto.ca/en/reservation.html" />
+
+    <!-- Police -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <!-- =====================================================
+         HEADER (injecté depuis partials/header.html)
+    ====================================================== -->
+    <div id="header"></div>
+
+    <!-- =====================================================
+         CONTENU PRINCIPAL
+    ====================================================== -->
+    <main class="container">
+      <!-- En-tête de page -->
+      <section class="page-header">
+        <h1>Online booking</h1>
+        <p>Choose an available time starting tomorrow.</p>
+      </section>
+
+      <!-- =====================================================
+           FORMULAIRE DE RÉSERVATION (FormSubmit)
+           - Envoi email vers: nettoiepresto@gmail.com
+           - Redirect après succès: reservation.html?thankyou=1
+           - Validation UX gérée dans js/main.js (submit uniquement)
+      ====================================================== -->
+      <form
+        id="bookingForm"
+        class="form-card booking-form"
+        method="POST"
+        action="https://formsubmit.co/nettoiepresto@gmail.com"
+        novalidate
+      >
+        <!-- Sujet email -->
+        <input
+          type="hidden"
+          name="_subject"
+          value="New booking — Nettoie Presto"
+        />
+
+        <!-- =====================================================
+             ✅ Redirection après succès
+             IMPORTANT (GitHub Pages) :
+             - Il faut une URL complète, sinon "/" ne fonctionne pas comme attendu
+        ====================================================== -->
+        <input
+          type="hidden"
+          name="_next"
+          value="https://www.nettoiepresto.ca/en/reservation.html?thankyou=1"
+        />
+
+        <!-- (Optionnel) Désactive le captcha FormSubmit -->
+        <input type="hidden" name="_captcha" value="false" />
+
+        <!-- Réponse automatique au client (optionnel) -->
+        <input
+          type="hidden"
+          name="_autoresponse"
+          value="Bonjour,
+
+Nous avons bien reçu votre demande de réservation chez Nettoie Presto.
+
+Notre équipe vous contactera dans les plus brefs délais afin de confirmer les détails et le rendez-vous.
+
+Merci pour votre confiance.
+
+Nettoie Presto
+La solution rapide pour un nettoyage parfait"
+        />
+
+        <!-- Champ anti-bot (honeypot) : doit rester vide -->
+        <input
+          type="text"
+          name="_honey"
+          style="display: none"
+          tabindex="-1"
+          autocomplete="off"
+        />
+
+        <!-- Reply-To (rempli via JS avec l’email client) -->
+        <input type="hidden" name="_replyto" id="replyToField" value="" />
+
+        <!-- =====================================================
+             SECTION 1 : INFORMATIONS PERSONNELLES
+        ====================================================== -->
+        <section class="form-section">
+          <div class="form-section-title">Personal information</div>
+
+          <div class="form-grid">
+            <!-- Nom -->
+            <label>
+              Full name <span class="required">*</span>
+              <input type="text" name="Nom" required />
+              <div class="error-message">This field is required.</div>
+            </label>
+
+            <!-- Email -->
+            <label>
+              Email <span class="required">*</span>
+              <input type="email" name="email" id="clientEmail" required />
+              <div class="error-message">
+                Please enter a valid email address.
+              </div>
+            </label>
+
+            <!-- Phone -->
+            <label class="span-2">
+              Phone <span class="required">*</span>
+              <input type="tel" name="Phone" required />
+              <div class="error-message">This field is required.</div>
+            </label>
+          </div>
+        </section>
+
+        <!-- =====================================================
+             SECTION 2 : DÉTAILS DU SERVICE
+        ====================================================== -->
+        <section class="form-section">
+          <div class="form-section-title">Service details</div>
+
+          <div class="form-grid">
+            <!-- Service -->
+            <label>
+              Service type <span class="required">*</span>
+              <select name="Service" required>
+                <option value="">-- Select --</option>
+                <option>Window cleaning</option>
+                <option>Couch cleaning</option>
+                <option>Mattress cleaning</option>
+                <option>Deep cleaning</option>
+                <option>Premium service</option>
+              </select>
+              <div class="error-message">Please select an option.</div>
+            </label>
+
+            <!-- Créneau -->
+            <label>
+              Time slot <span class="required">*</span>
+              <select name="Créneau" required>
+                <option value="">-- Select --</option>
+                <option>08:00 - 10:00</option>
+                <option>10:00 - 12:00</option>
+                <option>12:00 - 14:00</option>
+                <option>14:00 - 16:00</option>
+                <option>16:00 - 18:00</option>
+              </select>
+              <div class="error-message">Please select an option.</div>
+            </label>
+
+            <!-- Date -->
+            <label class="span-2">
+              Preferred date <span class="required">*</span>
+              <input id="bookingDate" type="date" name="Date" required />
+              <small>Bookings must be for tomorrow or later.</small>
+              <div class="error-message">
+                Please choose a valid date (tomorrow or later).
+              </div>
+            </label>
+
+            <!-- Message (optionnel) -->
+            <label class="span-2">
+              Message (options, address, notes)
+              <textarea name="Message" rows="4"></textarea>
+            </label>
+          </div>
+        </section>
+
+        <!-- Actions -->
+        <div class="form-actions">
+          <button type="submit" class="btn-primary large">
+            Send booking request
+          </button>
+          <a href="contact.html" class="btn-ghost">Need help?</a>
+        </div>
+      </form>
+
+      <!-- =====================================================
+           MESSAGE DE CONFIRMATION (affiché si ?thankyou=1)
+           Ton JS (js/main.js) cache le form et affiche ce bloc.
+      ====================================================== -->
+      <div id="thankyou" class="center hidden">
+        <h3>Thank you — booking sent ✅</h3>
+        <p>We will contact you shortly to confirm.</p>
+        <div style="margin-top: 14px">
+          <a class="btn-primary" href="index.html">Back to home</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- =====================================================
+         FOOTER (injecté depuis partials/footer.html)
+    ====================================================== -->
+    <div id="footer"></div>
+
+    <!-- =====================================================
+         LUCIDE (icônes)
+    ====================================================== -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- =====================================================
+         Injection des partials (header/footer)
+         + rechargement des icônes une fois injectés
+    ====================================================== -->
+    <script>
+      // Header
+      fetch("../partials/en-header.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("header").innerHTML = html;
+          if (window.lucide) lucide.createIcons();
+        });
+
+      // Footer
+      fetch("../partials/en-footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer").innerHTML = html;
+          if (window.lucide) lucide.createIcons();
+        });
+    </script>
+
+    <!-- =====================================================
+         JS principal (menu mobile, date min, validation, thankyou)
+    ====================================================== -->
+    <script src="../js/main.js"></script>
+  </body>
+</html>
+
