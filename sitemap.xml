@@ -24,4 +24,10 @@
     <loc>https://www.nettoiepresto.ca/contact.html</loc>
     <priority>0.7</priority>
   </url>
+  <!-- Versions anglaises : pages séparées pour le référencement bilingue. -->
+  <url><loc>https://www.nettoiepresto.ca/en/index.html</loc></url>
+  <url><loc>https://www.nettoiepresto.ca/en/services.html</loc></url>
+  <url><loc>https://www.nettoiepresto.ca/en/premium.html</loc></url>
+  <url><loc>https://www.nettoiepresto.ca/en/reservation.html</loc></url>
+  <url><loc>https://www.nettoiepresto.ca/en/contact.html</loc></url>
 </urlset>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <!-- Encodage UTF-8 (accents, caractères spéciaux) -->
     <meta charset="utf-8" />
@@ -9,10 +9,10 @@
 
     <!-- Titre -->
     <!-- SEO : titre, description et URL officielle affichés aux moteurs de recherche. -->
-    <title>Réserver un nettoyage à Saskatoon — Nettoie Presto</title>
-    <meta name="description" content="Réservez en ligne un service de nettoyage Nettoie Presto à Saskatoon, Saskatchewan." />
-    <link rel="canonical" href="https://www.nettoiepresto.ca/reservation.html" />
-    <!-- SEO bilingue : relie les versions française et anglaise pour les moteurs de recherche. -->
+    <title>Book Cleaning Services in Saskatoon — Nettoie Presto</title>
+    <meta name="description" content="Book Nettoie Presto cleaning services online in Saskatoon, Saskatchewan." />
+    <link rel="canonical" href="https://www.nettoiepresto.ca/en/reservation.html" />
+    <!-- SEO bilingue : indique à Google les versions française et anglaise de cette page. -->
     <link rel="alternate" hreflang="fr-CA" href="https://www.nettoiepresto.ca/reservation.html" />
     <link rel="alternate" hreflang="en-CA" href="https://www.nettoiepresto.ca/en/reservation.html" />
     <link rel="alternate" hreflang="x-default" href="https://www.nettoiepresto.ca/reservation.html" />
@@ -24,7 +24,7 @@
     />
 
     <!-- CSS principal -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
 
   <body>
@@ -39,8 +39,8 @@
     <main class="container">
       <!-- En-tête de page -->
       <section class="page-header">
-        <h1>Réservation en ligne</h1>
-        <p>Choisissez un créneau dès demain.</p>
+        <h1>Online booking</h1>
+        <p>Choose an available time starting tomorrow.</p>
       </section>
 
       <!-- =====================================================
@@ -60,7 +60,7 @@
         <input
           type="hidden"
           name="_subject"
-          value="Nouvelle réservation — Nettoie Presto"
+          value="New booking — Nettoie Presto"
         />
 
         <!-- =====================================================
@@ -71,7 +71,7 @@
         <input
           type="hidden"
           name="_next"
-          value="https://www.nettoiepresto.ca/reservation.html?thankyou=1"
+          value="https://www.nettoiepresto.ca/en/reservation.html?thankyou=1"
         />
 
         <!-- (Optionnel) Désactive le captcha FormSubmit -->
@@ -81,16 +81,16 @@
         <input
           type="hidden"
           name="_autoresponse"
-          value="Bonjour,
+          value="Hello,
 
-Nous avons bien reçu votre demande de réservation chez Nettoie Presto.
+We have received your booking request with Nettoie Presto.
 
-Notre équipe vous contactera dans les plus brefs délais afin de confirmer les détails et le rendez-vous.
+Our team will contact you shortly to confirm the details and appointment.
 
-Merci pour votre confiance.
+Thank you for choosing Nettoie Presto.
 
 Nettoie Presto
-La solution rapide pour un nettoyage parfait"
+Fast, reliable service for a spotless clean"
         />
 
         <!-- Champ anti-bot (honeypot) : doit rester vide -->
@@ -109,14 +109,14 @@ La solution rapide pour un nettoyage parfait"
              SECTION 1 : INFORMATIONS PERSONNELLES
         ====================================================== -->
         <section class="form-section">
-          <div class="form-section-title">Informations personnelles</div>
+          <div class="form-section-title">Personal information</div>
 
           <div class="form-grid">
             <!-- Nom -->
             <label>
-              Nom complet <span class="required">*</span>
+              Full name <span class="required">*</span>
               <input type="text" name="Nom" required />
-              <div class="error-message">Ce champ est obligatoire.</div>
+              <div class="error-message">This field is required.</div>
             </label>
 
             <!-- Email -->
@@ -124,15 +124,15 @@ La solution rapide pour un nettoyage parfait"
               Email <span class="required">*</span>
               <input type="email" name="email" id="clientEmail" required />
               <div class="error-message">
-                Veuillez entrer une adresse email valide.
+                Please enter a valid email address.
               </div>
             </label>
 
-            <!-- Téléphone -->
+            <!-- Phone -->
             <label class="span-2">
-              Téléphone <span class="required">*</span>
-              <input type="tel" name="Téléphone" required />
-              <div class="error-message">Ce champ est obligatoire.</div>
+              Phone <span class="required">*</span>
+              <input type="tel" name="Phone" required />
+              <div class="error-message">This field is required.</div>
             </label>
           </div>
         </section>
@@ -141,50 +141,50 @@ La solution rapide pour un nettoyage parfait"
              SECTION 2 : DÉTAILS DU SERVICE
         ====================================================== -->
         <section class="form-section">
-          <div class="form-section-title">Détails du service</div>
+          <div class="form-section-title">Service details</div>
 
           <div class="form-grid">
             <!-- Service -->
             <label>
-              Type de service <span class="required">*</span>
+              Service type <span class="required">*</span>
               <select name="Service" required>
-                <option value="">-- Choisissez --</option>
-                <option>Nettoyage des vitres</option>
-                <option>Nettoyage des canapés</option>
-                <option>Nettoyage des matelas</option>
-                <option>Solutions Grand Nettoyage</option>
-                <option>Service Premium</option>
+                <option value="">-- Select --</option>
+                <option>Window cleaning</option>
+                <option>Couch cleaning</option>
+                <option>Mattress cleaning</option>
+                <option>Deep cleaning</option>
+                <option>Premium service</option>
               </select>
-              <div class="error-message">Veuillez choisir une option.</div>
+              <div class="error-message">Please select an option.</div>
             </label>
 
             <!-- Créneau -->
             <label>
-              Créneau horaire <span class="required">*</span>
+              Time slot <span class="required">*</span>
               <select name="Créneau" required>
-                <option value="">-- Choisissez --</option>
+                <option value="">-- Select --</option>
                 <option>08:00 - 10:00</option>
                 <option>10:00 - 12:00</option>
                 <option>12:00 - 14:00</option>
                 <option>14:00 - 16:00</option>
                 <option>16:00 - 18:00</option>
               </select>
-              <div class="error-message">Veuillez choisir une option.</div>
+              <div class="error-message">Please select an option.</div>
             </label>
 
             <!-- Date -->
             <label class="span-2">
-              Date souhaitée <span class="required">*</span>
+              Preferred date <span class="required">*</span>
               <input id="bookingDate" type="date" name="Date" required />
-              <small>La réservation doit être pour demain ou après.</small>
+              <small>Bookings must be for tomorrow or later.</small>
               <div class="error-message">
-                Veuillez choisir une date valide (à partir de demain).
+                Please choose a valid date (tomorrow or later).
               </div>
             </label>
 
             <!-- Message (optionnel) -->
             <label class="span-2">
-              Message (options, adresse, remarques)
+              Message (options, address, notes)
               <textarea name="Message" rows="4"></textarea>
             </label>
           </div>
@@ -193,9 +193,9 @@ La solution rapide pour un nettoyage parfait"
         <!-- Actions -->
         <div class="form-actions">
           <button type="submit" class="btn-primary large">
-            Envoyer la réservation
+            Send booking request
           </button>
-          <a href="contact.html" class="btn-ghost">Besoin d'aide ?</a>
+          <a href="contact.html" class="btn-ghost">Need help?</a>
         </div>
       </form>
 
@@ -204,10 +204,10 @@ La solution rapide pour un nettoyage parfait"
            Ton JS (js/main.js) cache le form et affiche ce bloc.
       ====================================================== -->
       <div id="thankyou" class="center hidden">
-        <h3>Merci — réservation envoyée ✅</h3>
-        <p>Nous vous contacterons bientôt pour confirmer.</p>
+        <h3>Thank you — booking sent ✅</h3>
+        <p>We will contact you shortly to confirm.</p>
         <div style="margin-top: 14px">
-          <a class="btn-primary" href="index.html">Retour à l’accueil</a>
+          <a class="btn-primary" href="index.html">Back to home</a>
         </div>
       </div>
     </main>
@@ -228,7 +228,7 @@ La solution rapide pour un nettoyage parfait"
     ====================================================== -->
     <script>
       // Header
-      fetch("partials/header.html")
+      fetch("../partials/en-header.html")
         .then((res) => res.text())
         .then((html) => {
           document.getElementById("header").innerHTML = html;
@@ -236,7 +236,7 @@ La solution rapide pour un nettoyage parfait"
         });
 
       // Footer
-      fetch("partials/footer.html")
+      fetch("../partials/en-footer.html")
         .then((res) => res.text())
         .then((html) => {
           document.getElementById("footer").innerHTML = html;
@@ -247,15 +247,15 @@ La solution rapide pour un nettoyage parfait"
     <!-- =====================================================
          JS principal (menu mobile, date min, validation, thankyou)
     ====================================================== -->
-    <script src="js/main.js"></script>
-    <!-- Le switch FR/EN conserve la page correspondante lorsque c'est possible. -->
+    <script src="../js/main.js"></script>
+    <!-- Le switch EN/FR conserve la page correspondante. -->
     <script>
-      document.querySelectorAll('[data-lang-switch="en"]').forEach((link) => {
+      document.querySelectorAll('[data-lang-switch="fr"]').forEach((link) => {
         const page = location.pathname.split('/').pop() || 'index.html';
-        link.href = 'en/' + page;
+        link.href = '../' + page;
       });
     </script>
-  <script>/* Conserve la page lors du changement de langue. */ document.querySelectorAll('[data-lang-switch="en"]').forEach(a=>{a.href='en/'+(location.pathname.split('/').pop()||'index.html')});</script>
+  
 </body>
 </html>
 

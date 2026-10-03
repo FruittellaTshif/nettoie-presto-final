@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <!-- Encodage + responsive -->
     <meta charset="utf-8" />
@@ -8,9 +8,9 @@
     <!-- Titre -->
     <!-- SEO : titre, description et URL officielle affichés aux moteurs de recherche. -->
     <title>Contact Nettoie Presto — Saskatoon</title>
-    <meta name="description" content="Contactez Nettoie Presto pour vos services de nettoyage à Saskatoon, Saskatchewan. Adresse : 431 4th Avenue, Saskatoon, SK S7K 2M4." />
-    <link rel="canonical" href="https://www.nettoiepresto.ca/contact.html" />
-    <!-- SEO bilingue : relie les versions française et anglaise pour les moteurs de recherche. -->
+    <meta name="description" content="Contact Nettoie Presto for professional cleaning services in Saskatoon, Saskatchewan. 431 4th Avenue, Saskatoon, SK S7K 2M4." />
+    <link rel="canonical" href="https://www.nettoiepresto.ca/en/contact.html" />
+    <!-- SEO bilingue : indique à Google les versions française et anglaise de cette page. -->
     <link rel="alternate" hreflang="fr-CA" href="https://www.nettoiepresto.ca/contact.html" />
     <link rel="alternate" hreflang="en-CA" href="https://www.nettoiepresto.ca/en/contact.html" />
     <link rel="alternate" hreflang="x-default" href="https://www.nettoiepresto.ca/contact.html" />
@@ -22,7 +22,7 @@
     />
 
     <!-- CSS principal -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
 
   <body>
@@ -35,8 +35,8 @@
     <main class="container">
       <!-- En-tête -->
       <section class="contact-top">
-        <h1>Contactez-nous</h1>
-        <p>Une question ou une remarque ? Écrivez-nous un message.</p>
+        <h1>Contact us</h1>
+        <p>Have a question or request? Get in touch with us.</p>
       </section>
 
       <!-- ✅ Bloc bas (2 lignes / 2 colonnes) -->
@@ -55,16 +55,16 @@
             </p>
           </div>
 
-          <!-- Téléphone -->
+          <!-- Phone -->
           <div class="contact-panel-item">
             <div class="contact-panel-icon">
               <i data-lucide="phone"></i>
             </div>
-            <h3>Téléphone</h3>
+            <h3>Phone</h3>
             <p>
               <a href="tel:+15144485273">514-448-5273</a>
             </p>
-            <p class="muted">Saskatoon et alentours.</p>
+            <p class="muted">Saskatoon and surrounding areas.</p>
           </div>
 
           <!-- Zone -->
@@ -72,10 +72,10 @@
             <div class="contact-panel-icon">
               <i data-lucide="map-pin"></i>
             </div>
-            <h3>Zone desservie</h3>
+            <h3>Service area</h3>
             <!-- Adresse locale : garder cette information cohérente avec les profils professionnels en ligne. -->
             <p><strong>431 4th Avenue</strong><br />Saskatoon, Saskatchewan S7K 2M4</p>
-            <p>Service mobile à Saskatoon et environs.</p>
+            <p>Mobile service in Saskatoon and surrounding areas.</p>
           </div>
         </div>
       </section>
@@ -83,7 +83,7 @@
       <!-- CTA -->
       <div class="center" style="margin-top: 18px">
         <a href="reservation.html" class="btn-primary large"
-          >Réserver un service</a
+          >Book a service</a
         >
       </div>
     </main>
@@ -99,7 +99,7 @@
     <!-- ✅ Injection des partials + rechargement icônes -->
     <script>
       // Header
-      fetch("partials/header.html")
+      fetch("../partials/en-header.html")
         .then((res) => res.text())
         .then((html) => {
           document.getElementById("header").innerHTML = html;
@@ -107,7 +107,7 @@
         });
 
       // Footer
-      fetch("partials/footer.html")
+      fetch("../partials/en-footer.html")
         .then((res) => res.text())
         .then((html) => {
           document.getElementById("footer").innerHTML = html;
@@ -116,14 +116,14 @@
     </script>
 
     <!-- JS principal (menu mobile etc.) -->
-    <script src="js/main.js"></script>
-    <!-- Le switch FR/EN conserve la page correspondante lorsque c'est possible. -->
+    <script src="../js/main.js"></script>
+    <!-- Le switch EN/FR conserve la page correspondante. -->
     <script>
-      document.querySelectorAll('[data-lang-switch="en"]').forEach((link) => {
+      document.querySelectorAll('[data-lang-switch="fr"]').forEach((link) => {
         const page = location.pathname.split('/').pop() || 'index.html';
-        link.href = 'en/' + page;
+        link.href = '../' + page;
       });
     </script>
-  <script>/* Conserve la page lors du changement de langue. */ document.querySelectorAll('[data-lang-switch="en"]').forEach(a=>{a.href='en/'+(location.pathname.split('/').pop()||'index.html')});</script>
+  
 </body>
 </html>
