@@ -12,6 +12,10 @@
     <title>Réserver un nettoyage à Saskatoon — Nettoie Presto</title>
     <meta name="description" content="Réservez en ligne un service de nettoyage Nettoie Presto à Saskatoon, Saskatchewan." />
     <link rel="canonical" href="https://www.nettoiepresto.ca/reservation.html" />
+    <!-- SEO bilingue : relie les versions française et anglaise pour les moteurs de recherche. -->
+    <link rel="alternate" hreflang="fr-CA" href="https://www.nettoiepresto.ca/reservation.html" />
+    <link rel="alternate" hreflang="en-CA" href="https://www.nettoiepresto.ca/en/reservation.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.nettoiepresto.ca/en/reservation.html" />
 
     <!-- Police -->
     <link
@@ -244,6 +248,13 @@ La solution rapide pour un nettoyage parfait"
          JS principal (menu mobile, date min, validation, thankyou)
     ====================================================== -->
     <script src="js/main.js"></script>
+    <!-- Le switch FR/EN conserve la page correspondante lorsque c'est possible. -->
+    <script>
+      document.querySelectorAll('[data-lang-switch="en"]').forEach((link) => {
+        const page = location.pathname.split('/').pop() || 'index.html';
+        link.href = 'en/' + page;
+      });
+    </script>
   </body>
 </html>
 
