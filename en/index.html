@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+     <head>
+      <!-- Encodage + responsive -->
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+    
+      <!-- ✅ Google Search Console verification -->
+      <meta
+        name="google-site-verification"
+        content="aw1Qd76VS6BxdIkDLejZPcaiRwRhHvRAALgSuxzzvxM"
+      />
+    
+      <!-- ✅ SEO -->
+      <title>Nettoie Presto — Cleaning Services in Saskatoon</title>
+    
+      <meta
+        name="description"
+        content="Nettoie Presto — Service professionnel de nettoyage à Saskatoon et environs. Vitres, canapés, matelas, grand nettoyage et traitement antitaches. Réservation rapide."
+      />
+      <!-- Google n'utilise pas la balise meta keywords : le référencement repose plutôt sur le contenu, les titres et la pertinence locale. -->
+<meta name="author" content="Nettoie Presto" />
+
+      <!-- SEO local : indique aux moteurs de recherche la ville principale desservie. -->
+      <meta name="geo.placename" content="Saskatoon, Saskatchewan" />
+    
+      <!-- Canonical -->
+      <link rel="canonical" href="https://www.nettoiepresto.ca/en/index.html" />
+    <!-- SEO bilingue : indique à Google les versions française et anglaise de cette page. -->
+    <link rel="alternate" hreflang="fr-CA" href="https://www.nettoiepresto.ca/" />
+    <link rel="alternate" hreflang="en-CA" href="https://www.nettoiepresto.ca/en/index.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.nettoiepresto.ca/en/index.html" />
+    
+      <!-- Police -->
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet"
+      />
+    
+      <!-- Favicon -->
+      <link rel="icon" href="../assets/favicon.png" />
+    
+      <!-- CSS principal -->
+      <link rel="stylesheet" href="../css/style.css" />
+    
+      <!-- Open Graph (partage réseaux) -->
+      <meta property="og:title" content="Nettoie Presto — Service de nettoyage" />
+      <meta
+        property="og:description"
+        content="Professional cleaning services in Saskatoon and surrounding areas. Quick booking."
+      />
+      <meta property="og:url" content="https://www.nettoiepresto.ca/" />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Nettoie Presto" />
+      <meta property="og:locale" content="en_CA" />
+      <!-- Données structurées locales (Schema.org) : décrivent l'entreprise à Google. -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Nettoie Presto",
+        "url": "https://www.nettoiepresto.ca/",
+        "email": "nettoiepresto@gmail.com",
+        "telephone": "+1-514-448-5273",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "431 4th Avenue",
+          "addressLocality": "Saskatoon",
+          "addressRegion": "SK",
+          "postalCode": "S7K 2M4",
+          "addressCountry": "CA"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Saskatoon"
+        }
+      }
+      </script>
+    </head>
+
+
+  <body>
+    <!-- ✅ HEADER chargé depuis partials/header.html -->
+    <div id="header">
+      <!-- ✅ Fallback (si jamais le fetch échoue) -->
+      <noscript>
+        <div class="container" style="padding: 16px">
+          <strong>Javascript est désactivé.</strong> Le menu ne peut pas se charger.
+        </div>
+      </noscript>
+    </div>
+
+    <main>
+      <!-- =====================================================
+           HERO (background image)
+           ✅ hero-overlay existe dans HTML -> on garde,
+           mais on ajoutera le style dans le CSS si besoin.
+      ====================================================== -->
+      <section
+        class="hero hero-bg"
+        style="--hero-img: url(&quot;../assets/service_de_nettoyage.jpg&quot;)"
+      >
+        <div class="hero-overlay">
+          <div class="container hero-grid">
+            <div class="hero-left">
+              <h1>Cleaning Services in Saskatoon</h1>
+
+              <p class="lead">
+                Our cleaning services are designed to keep your home or business clean, fresh and welcoming.
+              </p>
+
+              <div class="cta-row">
+                <a href="reservation.html" class="btn-primary large">
+                  Book now
+                </a>
+              </div>
+            </div>
+
+            <!-- Colonne droite (conservée si tu veux du layout) -->
+            <div class="hero-right"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           POURQUOI (AVANT les services)
+      ====================================================== -->
+      <section class="why-pro">
+        <div class="container">
+          <h2 class="section-title">Why choose Nettoie Presto?</h2>
+
+          <div class="why-pro-grid">
+            <!-- 1 -->
+            <div class="why-pro-card">
+              <div class="why-pro-icon" aria-hidden="true">
+                <i data-lucide="badge-check"></i>
+              </div>
+              <h3>Professional</h3>
+              <p>Trained team and suitable cleaning products.</p>
+            </div>
+
+            <!-- 2 -->
+            <div class="why-pro-card">
+              <div class="why-pro-icon" aria-hidden="true">
+                <i data-lucide="clock"></i>
+              </div>
+              <h3>Fast & reliable</h3>
+              <p>Easy booking and prompt service.</p>
+            </div>
+
+            <!-- 3 -->
+            <div class="why-pro-card">
+              <div class="why-pro-icon" aria-hidden="true">
+                <i data-lucide="leaf"></i>
+              </div>
+              <h3>Eco-conscious</h3>
+              <p>Carefully selected products and safe cleaning methods.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           NOS SERVICES — Nouveau style (image en haut + texte en bas)
+      ====================================================== -->
+      <section class="services-showcase">
+        <div class="container">
+          <h2 class="section-title section-title-lg">Our services</h2>
+
+          <div class="services-showcase-grid">
+            <!-- Vitres -->
+            <a class="service-tile" href="services.html#vitres">
+              <div class="service-tile-media">
+                <img
+                  src="../assets/nettoyage_vitre.jpg"
+                  alt="Window cleaning"
+                />
+              </div>
+              <div class="service-tile-body">
+                <h3>Window cleaning</h3>
+                <p>Interior & exterior — streak-free results.</p>
+              </div>
+            </a>
+
+            <!-- Canapés -->
+            <a class="service-tile" href="services.html#canapes">
+              <div class="service-tile-media">
+                <img
+                  src="../assets/nettoyage_canape.jpg"
+                  alt="Couch cleaning"
+                />
+              </div>
+              <div class="service-tile-body">
+                <h3>Couch cleaning</h3>
+                <p>Stains, odours and fabrics — fast drying.</p>
+              </div>
+            </a>
+
+            <!-- Matelas -->
+            <a class="service-tile" href="services.html#matelas">
+              <div class="service-tile-media">
+                <img
+                  src="../assets/nettoyage_matelas.png"
+                  alt="Mattress cleaning"
+                />
+              </div>
+              <div class="service-tile-body">
+                <h3>Mattress cleaning</h3>
+                <p>Removal of dust mites, odours and stains.</p>
+              </div>
+            </a>
+
+            <!-- Grand nettoyage -->
+            <a class="service-tile" href="services.html#grand-nettoyage">
+              <div class="service-tile-media">
+                <img
+                  src="../assets/service_grand_nettoyage.jpg"
+                  alt="Deep cleaning solutions"
+                />
+              </div>
+              <div class="service-tile-body">
+                <h3>Deep cleaning solutions</h3>
+                <p>After renovations, moves and events.</p>
+              </div>
+            </a>
+
+            <!-- Antitaches -->
+            <a class="service-tile" href="services.html#antitaches">
+              <div class="service-tile-media">
+                <img
+                  src="../assets/traitement_antitache.jpg"
+                  alt="Stain protection"
+                />
+              </div>
+              <div class="service-tile-body">
+                <h3>Stain protection</h3>
+                <p>Invisible protection for fabrics and furniture.</p>
+              </div>
+            </a>
+
+            <!-- Zone -->
+            <a class="service-tile" href="services.html#zone-garanties">
+              <div class="service-tile-media">
+                <img src="../assets/zone_service.jpg" alt="Zone et garanties" />
+              </div>
+              <div class="service-tile-body">
+                <h3>Service area & guarantee</h3>
+                <p>Saskatoon and surrounding areas — satisfaction guaranteed.</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- ✅ Bouton "More services" centré sous la grille -->
+          <div class="more-services">
+            <a href="services.html" class="btn-primary large">More services</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+          RÉALISATIONS — bande défilante
+      ====================================================== -->
+      <section class="realisations">
+        <div class="container">
+          <h2 class="section-title">Our work</h2>
+          <p class="realisations-sub">
+            A few before-and-after examples from recent jobs.
+          </p>
+
+          <div
+            class="realisations-marquee"
+            aria-label="Gallery of recent cleaning projects"
+          >
+            <div class="realisations-track">
+              <!-- ✅ 1er set -->
+              <img
+                src="../assets/realisations/canape_fait.jpg"
+                alt="Cleaning project 1"
+              />
+              <img
+                src="../assets/realisations/service_vitres_ext.jpg"
+                alt="Cleaning project 2"
+              />
+
+              <!-- ✅ 2e set (duplication pour boucle infinie fluide) -->
+              <img
+                src="../assets/realisations/canape_fait.jpg"
+                alt="Cleaning project 1"
+              />
+              <img
+                src="../assets/realisations/service_vitres_ext.jpg"
+                alt="Cleaning project 2"
+              />
+              <img
+                src="../assets/realisations/canape_fait.jpg"
+                alt="Cleaning project 1"
+              />
+              <img
+                src="../assets/realisations/service_vitres_ext.jpg"
+                alt="Cleaning project 2"
+              />
+              <img
+                src="../assets/realisations/canape_fait.jpg"
+                alt="Cleaning project 1"
+              />
+              <img
+                src="../assets/realisations/service_vitres_ext.jpg"
+                alt="Cleaning project 2"
+              />
+              <img
+                src="../assets/realisations/canape_fait.jpg"
+                alt="Cleaning project 1"
+              />
+              <img
+                src="../assets/realisations/service_vitres_ext.jpg"
+                alt="Cleaning project 2"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ✅ FOOTER chargé depuis partials/footer.html -->
+    <div id="footer"></div>
+
+    <!-- =====================================================
+         ICÔNES SOPHISTIQUÉES (Lucide)
+    ====================================================== -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- ✅ Injection des partials + rechargement icônes -->
+    <script>
+      // ✅ Petite fonction utilitaire (propre)
+      function safeCreateIcons() {
+        if (window.lucide) lucide.createIcons();
+      }
+
+      // Header
+      fetch("../partials/en-header.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("header").innerHTML = html;
+          safeCreateIcons();
+        })
+        .catch(() => {
+          // ✅ Fallback minimal si le header ne charge pas
+          document.getElementById("header").innerHTML =
+            '<div class="container" style="padding:16px">Menu indisponible (chargement impossible).</div>';
+        });
+
+      // Footer
+      fetch("../partials/en-footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer").innerHTML = html;
+          safeCreateIcons();
+        })
+        .catch(() => {
+          document.getElementById("footer").innerHTML =
+            '<div class="container" style="padding:16px">Pied de page indisponible.</div>';
+        });
+    </script>
+
+    <!-- JS principal (menu mobile etc.) -->
+    <!-- ✅ defer = charge après parsing HTML, plus stable -->
+    <script src="../js/main.js" defer></script>
+  </body>
+</html>
+
