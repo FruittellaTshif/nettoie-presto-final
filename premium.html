@@ -10,6 +10,10 @@
     <title>Services Premium de nettoyage à Saskatoon — Nettoie Presto</title>
     <meta name="description" content="Service Premium Nettoie Presto à Saskatoon : nettoyage de canapé, désodorisation et traitement antitaches à domicile." />
     <link rel="canonical" href="https://www.nettoiepresto.ca/premium.html" />
+    <!-- SEO bilingue : relie les versions française et anglaise pour les moteurs de recherche. -->
+    <link rel="alternate" hreflang="fr-CA" href="https://www.nettoiepresto.ca/premium.html" />
+    <link rel="alternate" hreflang="en-CA" href="https://www.nettoiepresto.ca/en/premium.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.nettoiepresto.ca/en/premium.html" />
 
     <!-- Police -->
     <link
@@ -154,5 +158,12 @@
 
     <!-- JS principal (menu mobile etc.) -->
     <script src="js/main.js"></script>
+    <!-- Le switch FR/EN conserve la page correspondante lorsque c'est possible. -->
+    <script>
+      document.querySelectorAll('[data-lang-switch="en"]').forEach((link) => {
+        const page = location.pathname.split('/').pop() || 'index.html';
+        link.href = 'en/' + page;
+      });
+    </script>
   </body>
 </html>
