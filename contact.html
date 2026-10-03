@@ -10,6 +10,10 @@
     <title>Contact Nettoie Presto — Saskatoon</title>
     <meta name="description" content="Contactez Nettoie Presto pour vos services de nettoyage à Saskatoon, Saskatchewan. Adresse : 431 4th Avenue, Saskatoon, SK S7K 2M4." />
     <link rel="canonical" href="https://www.nettoiepresto.ca/contact.html" />
+    <!-- SEO bilingue : relie les versions française et anglaise pour les moteurs de recherche. -->
+    <link rel="alternate" hreflang="fr-CA" href="https://www.nettoiepresto.ca/contact.html" />
+    <link rel="alternate" hreflang="en-CA" href="https://www.nettoiepresto.ca/en/contact.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.nettoiepresto.ca/en/contact.html" />
 
     <!-- Police -->
     <link
@@ -113,5 +117,12 @@
 
     <!-- JS principal (menu mobile etc.) -->
     <script src="js/main.js"></script>
+    <!-- Le switch FR/EN conserve la page correspondante lorsque c'est possible. -->
+    <script>
+      document.querySelectorAll('[data-lang-switch="en"]').forEach((link) => {
+        const page = location.pathname.split('/').pop() || 'index.html';
+        link.href = 'en/' + page;
+      });
+    </script>
   </body>
 </html>
