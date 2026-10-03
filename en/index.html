@@ -16,7 +16,7 @@
     
       <meta
         name="description"
-        content="Nettoie Presto — Service professionnel de nettoyage à Saskatoon et environs. Vitres, canapés, matelas, grand nettoyage et traitement antitaches. Réservation rapide."
+        content="Nettoie Presto provides professional cleaning services in Saskatoon and surrounding areas, including windows, couches, mattresses, deep cleaning and stain protection."
       />
       <!-- Google n'utilise pas la balise meta keywords : le référencement repose plutôt sur le contenu, les titres et la pertinence locale. -->
 <meta name="author" content="Nettoie Presto" />
@@ -44,7 +44,7 @@
       <link rel="stylesheet" href="../css/style.css" />
     
       <!-- Open Graph (partage réseaux) -->
-      <meta property="og:title" content="Nettoie Presto — Service de nettoyage" />
+      <meta property="og:title" content="Nettoie Presto — Cleaning Services" />
       <meta
         property="og:description"
         content="Professional cleaning services in Saskatoon and surrounding areas. Quick booking."
@@ -85,7 +85,7 @@
       <!-- ✅ Fallback (si jamais le fetch échoue) -->
       <noscript>
         <div class="container" style="padding: 16px">
-          <strong>Javascript est désactivé.</strong> Le menu ne peut pas se charger.
+          <strong>JavaScript is disabled.</strong> The navigation menu cannot load.
         </div>
       </noscript>
     </div>
@@ -241,7 +241,7 @@
             <!-- Zone -->
             <a class="service-tile" href="services.html#zone-garanties">
               <div class="service-tile-media">
-                <img src="../assets/zone_service.jpg" alt="Zone et garanties" />
+                <img src="../assets/zone_service.jpg" alt="Service area and guarantee" />
               </div>
               <div class="service-tile-body">
                 <h3>Service area & guarantee</h3>
@@ -346,7 +346,7 @@
         .catch(() => {
           // ✅ Fallback minimal si le header ne charge pas
           document.getElementById("header").innerHTML =
-            '<div class="container" style="padding:16px">Menu indisponible (chargement impossible).</div>';
+            '<div class="container" style="padding:16px">Navigation unavailable.</div>';
         });
 
       // Footer
@@ -358,7 +358,7 @@
         })
         .catch(() => {
           document.getElementById("footer").innerHTML =
-            '<div class="container" style="padding:16px">Pied de page indisponible.</div>';
+            '<div class="container" style="padding:16px">Footer unavailable.</div>';
         });
     </script>
 
@@ -372,7 +372,7 @@
         link.href = '../' + page;
       });
     </script>
-  <script>/* Conserve la page lors du changement de langue. */ document.querySelectorAll('[data-lang-switch="fr"]').forEach(a=>{a.href='../'+(location.pathname.split('/').pop()||'index.html')});</script>
+  
 </body>
 </html>
 
