@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Encodage + responsive -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Titre onglet navigateur -->
+    <!-- SEO : titre, description et URL officielle affichés aux moteurs de recherche. -->
+    <title>Cleaning Services in Saskatoon — Nettoie Presto</title>
+    <meta name="description" content="Cleaning services in Saskatoon: windows, couches, mattresses, deodorizing, stain protection and deep cleaning." />
+    <link rel="canonical" href="https://www.nettoiepresto.ca/en/services.html" />
+    <!-- SEO bilingue : indique à Google les versions française et anglaise de cette page. -->
+    <link rel="alternate" hreflang="fr-CA" href="https://www.nettoiepresto.ca/services.html" />
+    <link rel="alternate" hreflang="en-CA" href="https://www.nettoiepresto.ca/en/services.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.nettoiepresto.ca/en/services.html" />
+
+    <!-- Police -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <!-- ✅ HEADER chargé depuis partials/header.html -->
+    <div id="header"></div>
+
+    <main>
+      <!-- =====================================================
+           HERO SERVICES (comme ton exemple)
+           - Image: assets/service_page.jpg
+      ====================================================== -->
+      <section
+        class="services-hero"
+        style="--services-hero-img: url(&quot;../assets/service_page.jpg&quot;)"
+      >
+        <div class="services-hero-overlay">
+          <div class="container services-hero-inner">
+            <h1>Our services</h1>
+            <p>Cleaning services tailored to homes and businesses.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           LISTE DES SERVICES (cartes style pro)
+           ✅ IMPORTANT : ids gardés (vitres, canapes, matelas...)
+           ✅ Permet le highlight via :target
+      ====================================================== -->
+      <section class="container services-page">
+        <div class="services-cards">
+          <!-- 1) Vitres -->
+          <article class="service-item" id="vitres">
+            <div class="service-badge">
+              <span class="service-badge-inner" aria-hidden="true">
+                <i data-lucide="square"></i>
+              </span>
+            </div>
+
+            <h3>Window cleaning (interior & exterior)</h3>
+            <p>
+              Homes, condos and apartments — including large windows and glass doors. Streak-free cleaning.
+            </p>
+
+            <a class="service-link" href="reservation.html">Book now</a>
+          </article>
+
+          <!-- 2) Canapés -->
+          <article class="service-item" id="canapes">
+            <div class="service-badge">
+              <span class="service-badge-inner" aria-hidden="true">
+                <i data-lucide="armchair"></i>
+              </span>
+            </div>
+
+            <h3>In-home couch cleaning</h3>
+            <p>
+              2–3 seat couches, sectionals and armchairs. Carefully selected products, stain and odour removal, and fast drying.
+              <br />
+              <em>Option :</em> traitement antitaches (protection du tissu).
+            </p>
+
+            <a class="service-link" href="reservation.html">Book now</a>
+          </article>
+
+          <!-- 3) Matelas -->
+          <article class="service-item" id="matelas">
+            <div class="service-badge">
+              <span class="service-badge-inner" aria-hidden="true">
+                <i data-lucide="bed"></i>
+              </span>
+            </div>
+
+            <h3>Nettoyage des matelas</h3>
+            <p>
+              Nettoyage en profondeur : élimination des taches, odeurs,
+              poussières et acariens. Idéal pour un environnement plus sain.
+            </p>
+
+            <a class="service-link" href="reservation.html">Book now</a>
+          </article>
+
+          <!-- 4) Tissus d’ameublement -->
+          <article class="service-item" id="tissus">
+            <div class="service-badge">
+              <span class="service-badge-inner" aria-hidden="true">
+                <i data-lucide="sofa"></i>
+              </span>
+            </div>
+
+            <h3>Nettoyage de tissus d’ameublement</h3>
+            <p>
+              Fauteuils, chaises, tissus divers. Élimination des mauvaises
+              odeurs, poussière et acariens.
+            </p>
+
+            <a class="service-link" href="reservation.html">Book now</a>
+          </article>
+
+          <!-- 5) Désodorisation -->
+          <article class="service-item" id="desodorisation">
+            <div class="service-badge">
+              <span class="service-badge-inner" aria-hidden="true">
+                <i data-lucide="leaf"></i>
+              </span>
+            </div>
+
+            <h3>Désodorisation des surfaces</h3>
+            <p>
+              Neutralisation des odeurs d’animaux, d’humidité, etc. Produits
+              naturels et efficaces.
+            </p>
+
+            <a class="service-link" href="reservation.html">Book now</a>
+          </article>
+
+          <!-- 6) Stain protection -->
+          <article class="service-item" id="antitaches">
+            <div class="service-badge">
+              <span class="service-badge-inner" aria-hidden="true">
+                <i data-lucide="spray-can"></i>
+              </span>
+            </div>
+
+            <h3>Stain protection</h3>
+            <p>
+              Application d’un produit protecteur qui empêche les taches de
+              pénétrer et prolonge la durée de vie de vos meubles.
+            </p>
+
+            <a class="service-link" href="reservation.html">Book now</a>
+          </article>
+
+          <!-- 7) Grand Nettoyage -->
+          <article class="service-item" id="grand-nettoyage">
+            <div class="service-badge">
+              <span class="service-badge-inner" aria-hidden="true">
+                <i data-lucide="sparkles"></i>
+              </span>
+            </div>
+
+            <h3>Deep cleaning solutions</h3>
+            <p>
+              Nettoyage complet pour résidences & locaux commerciaux. Idéal
+              après travaux, déménagements ou grands événements.
+            </p>
+
+            <a class="service-link" href="reservation.html">Book now</a>
+          </article>
+
+          <!-- 8) Zone / Garanties -->
+          <article class="service-item" id="zone-garanties">
+            <div class="service-badge">
+              <span class="service-badge-inner" aria-hidden="true">
+                <i data-lucide="map-pin"></i>
+              </span>
+            </div>
+
+            <h3>Service area & guarantee</h3>
+            <p>
+              <strong>Zone :</strong> Saskatoon and surrounding areas.
+              <br />
+              Matériel + déplacement inclus, avec une
+              <strong>garantie de satisfaction</strong>. Produits sûrs pour
+              enfants et animaux.
+            </p>
+
+            <a class="service-link" href="contact.html">Nous contacter</a>
+          </article>
+        </div>
+
+        <!-- CTA global -->
+        <div class="center" style="margin-top: 18px">
+          <a href="reservation.html" class="btn-primary large">
+            Book now un service
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- ✅ FOOTER chargé depuis partials/footer.html -->
+    <div id="footer"></div>
+
+    <!-- =====================================================
+         ICÔNES SOPHISTIQUÉES (Lucide)
+    ====================================================== -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- ✅ Injection des partials + rechargement icônes -->
+    <script>
+      // Header
+      fetch("../partials/en-header.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("header").innerHTML = html;
+          if (window.lucide) lucide.createIcons();
+        });
+
+      // Footer
+      fetch("../partials/en-footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer").innerHTML = html;
+          if (window.lucide) lucide.createIcons();
+        });
+    </script>
+
+    <!-- JS principal (menu mobile etc.) -->
+    <script src="../js/main.js"></script>
+  </body>
+</html>
