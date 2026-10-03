@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Encodage + responsive -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Titre -->
+    <!-- SEO : titre, description et URL officielle affichés aux moteurs de recherche. -->
+    <title>Contact Nettoie Presto — Saskatoon</title>
+    <meta name="description" content="Contact Nettoie Presto for professional cleaning services in Saskatoon, Saskatchewan. 431 4th Avenue, Saskatoon, SK S7K 2M4." />
+    <link rel="canonical" href="https://www.nettoiepresto.ca/en/contact.html" />
+    <!-- SEO bilingue : indique à Google les versions française et anglaise de cette page. -->
+    <link rel="alternate" hreflang="fr-CA" href="https://www.nettoiepresto.ca/contact.html" />
+    <link rel="alternate" hreflang="en-CA" href="https://www.nettoiepresto.ca/en/contact.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.nettoiepresto.ca/en/contact.html" />
+
+    <!-- Police -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <!-- ✅ HEADER chargé depuis partials/header.html -->
+    <div id="header"></div>
+
+    <!-- =========================
+       CONTENU PRINCIPAL
+    ========================== -->
+    <main class="container">
+      <!-- En-tête -->
+      <section class="contact-top">
+        <h1>Contact us</h1>
+        <p>Have a question or request? Get in touch with us.</p>
+      </section>
+
+      <!-- ✅ Bloc bas (2 lignes / 2 colonnes) -->
+      <section class="contact-panel">
+        <div class="contact-panel-grid">
+          <!-- Email -->
+          <div class="contact-panel-item">
+            <div class="contact-panel-icon">
+              <i data-lucide="mail"></i>
+            </div>
+            <h3>Email</h3>
+            <p>
+              <a href="mailto:nettoiepresto@gmail.com"
+                >nettoiepresto@gmail.com</a
+              >
+            </p>
+          </div>
+
+          <!-- Phone -->
+          <div class="contact-panel-item">
+            <div class="contact-panel-icon">
+              <i data-lucide="phone"></i>
+            </div>
+            <h3>Phone</h3>
+            <p>
+              <a href="tel:+15144485273">514-448-5273</a>
+            </p>
+            <p class="muted">Saskatoon and surrounding areas.</p>
+          </div>
+
+          <!-- Zone -->
+          <div class="contact-panel-item">
+            <div class="contact-panel-icon">
+              <i data-lucide="map-pin"></i>
+            </div>
+            <h3>Service area</h3>
+            <!-- Adresse locale : garder cette information cohérente avec les profils professionnels en ligne. -->
+            <p><strong>431 4th Avenue</strong><br />Saskatoon, Saskatchewan S7K 2M4</p>
+            <p>Mobile service in Saskatoon and surrounding areas.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="center" style="margin-top: 18px">
+        <a href="reservation.html" class="btn-primary large"
+          >Book a service</a
+        >
+      </div>
+    </main>
+
+    <!-- ✅ FOOTER chargé depuis partials/footer.html -->
+    <div id="footer"></div>
+
+    <!-- =====================================================
+         ICÔNES SOPHISTIQUÉES (Lucide)
+    ====================================================== -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- ✅ Injection des partials + rechargement icônes -->
+    <script>
+      // Header
+      fetch("../partials/en-header.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("header").innerHTML = html;
+          if (window.lucide) lucide.createIcons();
+        });
+
+      // Footer
+      fetch("../partials/en-footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer").innerHTML = html;
+          if (window.lucide) lucide.createIcons();
+        });
+    </script>
+
+    <!-- JS principal (menu mobile etc.) -->
+    <script src="../js/main.js"></script>
+  </body>
+</html>
