@@ -255,6 +255,7 @@ La solution rapide pour un nettoyage parfait"
         link.href = 'en/' + page;
       });
     </script>
-  </body>
+  <script>/* Conserve la page lors du changement de langue. */ document.querySelectorAll('[data-lang-switch="en"]').forEach(a=>{a.href='en/'+(location.pathname.split('/').pop()||'index.html')});</script>
+</body>
 </html>
 
