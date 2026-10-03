@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Encodage + responsive -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Titre de la page (onglet navigateur) -->
+    <!-- SEO : titre, description et URL officielle affichés aux moteurs de recherche. -->
+    <title>Premium Cleaning Services in Saskatoon — Nettoie Presto</title>
+    <meta name="description" content="Premium couch cleaning in Saskatoon with deodorizing, stain protection and professional in-home service." />
+    <link rel="canonical" href="https://www.nettoiepresto.ca/en/premium.html" />
+    <!-- SEO bilingue : indique à Google les versions française et anglaise de cette page. -->
+    <link rel="alternate" hreflang="fr-CA" href="https://www.nettoiepresto.ca/premium.html" />
+    <link rel="alternate" hreflang="en-CA" href="https://www.nettoiepresto.ca/en/premium.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.nettoiepresto.ca/en/premium.html" />
+
+    <!-- Police -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <!-- ✅ HEADER chargé depuis partials/header.html -->
+    <div id="header"></div>
+
+    <!-- =========================
+       CONTENU PRINCIPAL
+       STYLE PREMIUM "DARK + COULEURS"
+       (sans image en background)
+    ========================== -->
+    <main>
+      <section class="premium-dark">
+        <div class="container premium-dark-inner">
+          <!-- En-tête Premium -->
+          <header class="premium-head">
+            <p class="premium-badge">
+              <span class="premium-badge-dot"></span>
+              Premium Service
+            </p>
+
+            <h1 class="premium-title">Premium Services</h1>
+
+            <p class="premium-subtitle">
+              Complete couch cleaning treatment for visible results and lasting protection.
+            </p>
+          </header>
+
+          <!-- Grille des cartes (mêmes contenus qu'avant) -->
+          <section class="premium-grid">
+            <!-- Carte 1 : Description générale -->
+            <article class="premium-card">
+              <div class="premium-card-icon">
+                <i data-lucide="sparkles"></i>
+              </div>
+              <h3>Couch cleaning — Complete treatment</h3>
+              <p>
+                Deep cleaning with carefully selected products, professional deodorizing, invisible stain protection, fast drying and a detailed finish.
+              </p>
+            </article>
+
+            <!-- Carte 2 : What's included -->
+            <article class="premium-card">
+              <div class="premium-card-icon">
+                <i data-lucide="check-circle-2"></i>
+              </div>
+              <h3>What's included</h3>
+              <ul>
+                <li>
+                  Deep cleaning of the couch (2–3 seats or sectional)
+                </li>
+                <li>Eco-conscious and hypoallergenic products</li>
+                <li>Professional deodorizing</li>
+                <li>Invisible stain protection for fabric</li>
+                <li>Fast drying and detailed finishing</li>
+              </ul>
+            </article>
+
+            <!-- Carte 3 : Avantages -->
+            <article class="premium-card">
+              <div class="premium-card-icon">
+                <i data-lucide="shield-check"></i>
+              </div>
+              <h3>Premium benefits</h3>
+              <ul>
+                <li>Long-lasting protection against spills and dirt</li>
+                <li>Improves appearance and helps extend furniture life</li>
+                <li>Ideal for homes with children, pets and delicate fabrics</li>
+                <li>Visible results and a soft feel after cleaning</li>
+              </ul>
+            </article>
+
+            <!-- Carte 4 : Pricing -->
+            <article class="premium-card">
+              <div class="premium-card-icon">
+                <i data-lucide="badge-dollar-sign"></i>
+              </div>
+              <h3>Pricing</h3>
+              <p><strong>2–3 seat couch:</strong> 210 $ + taxes</p>
+              <p><strong>Sectional couch:</strong> 280 $ + taxes</p>
+            </article>
+
+            <!-- Carte 5 : Zone + promesse de service -->
+            <article class="premium-card">
+              <div class="premium-card-icon">
+                <i data-lucide="map-pin"></i>
+              </div>
+              <h3>Service area</h3>
+              <p><strong>Area:</strong> Saskatoon and surrounding areas.</p>
+              <p>Prompt in-home service from a professional team.</p>
+            </article>
+          </section>
+
+          <!-- CTA principal -->
+          <div class="center" style="margin-top: 18px">
+            <a href="reservation.html" class="btn-primary large">
+              Book Premium Service
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ✅ FOOTER chargé depuis partials/footer.html -->
+    <div id="footer"></div>
+
+    <!-- =====================================================
+         ICÔNES SOPHISTIQUÉES (Lucide)
+    ====================================================== -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- ✅ Injection des partials + rechargement icônes -->
+    <script>
+      // Header
+      fetch("../partials/en-header.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("header").innerHTML = html;
+          if (window.lucide) lucide.createIcons();
+        });
+
+      // Footer
+      fetch("../partials/en-footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer").innerHTML = html;
+          if (window.lucide) lucide.createIcons();
+        });
+    </script>
+
+    <!-- JS principal (menu mobile etc.) -->
+    <script src="../js/main.js"></script>
+  </body>
+</html>
